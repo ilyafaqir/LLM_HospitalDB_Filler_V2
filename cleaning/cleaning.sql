@@ -592,3 +592,226 @@ SELECT DISTINCT
 FROM places
 GROUP BY city, region, province
 ORDER BY city;
+-- ============================================================================
+-- HOSPITAL DATA CLEANING SQL
+-- ============================================================================
+
+-- 1. DROP UNUSED COLUMNS (latitude, longitude, source)
+-- ============================================================================
+ALTER TABLE hospitals 
+DROP COLUMN latitude,
+DROP COLUMN longitude,
+DROP COLUMN source;
+
+-- 2. CLEAN PHONE NUMBERS
+-- ============================================================================
+
+-- Remove 'NULL' text values
+UPDATE hospitals 
+SET phone = NULL 
+WHERE phone = 'NULL' OR phone = '' OR TRIM(phone) = '';
+
+-- Standardize phone format: remove spaces, dots, dashes
+UPDATE hospitals 
+SET phone = REPLACE(REPLACE(REPLACE(phone, ' ', ''), '.', ''), '-', '')
+WHERE phone IS NOT NULL;
+
+-- Remove country code prefix if present (Morocco +212 or 00212 or 0212)
+UPDATE hospitals 
+SET phone = REGEXP_REPLACE(phone, '^(\\+212|00212|0212)', '0')
+WHERE phone IS NOT NULL;
+
+-- Ensure phone starts with 0 if it's a valid Moroccan number
+UPDATE hospitals 
+SET phone = CONCAT('0', phone)
+WHERE phone IS NOT NULL 
+  AND phone NOT LIKE '0%' 
+  AND LENGTH(phone) = 9;
+
+-- Mark invalid phones as NULL (valid Moroccan phones are 10 digits starting with 0)
+UPDATE hospitals 
+SET phone = NULL
+WHERE phone IS NOT NULL 
+  AND (LENGTH(phone) != 10 OR phone NOT LIKE '0%');
+
+-- 3. CLEAN EMAIL ADDRESSES
+-- ============================================================================
+
+-- Remove 'NULL' text values
+UPDATE hospitals 
+SET email = NULL 
+WHERE email = 'NULL' OR email = '' OR TRIM(email) = '';
+
+-- Convert to lowercase
+UPDATE hospitals 
+SET email = LOWER(TRIM(email))
+WHERE email IS NOT NULL;
+
+-- Mark invalid emails as NULL (must contain @ and .)
+UPDATE hospitals 
+SET email = NULL
+WHERE email IS NOT NULL 
+  AND (email NOT LIKE '%@%.%' 
+       OR email LIKE '%..%' 
+       OR email LIKE '@%'
+       OR email LIKE '%@');
+
+-- 4. CLEAN WEBSITE URLS
+-- ============================================================================
+
+-- Remove 'NULL' text values
+UPDATE hospitals 
+SET website = NULL 
+WHERE website = 'NULL' OR website = '' OR TRIM(website) = '';
+
+-- Convert to lowercase
+UPDATE hospitals 
+SET website = LOWER(TRIM(website))
+WHERE website IS NOT NULL;
+
+-- Add https:// if missing
+UPDATE hospitals 
+SET website = CONCAT('https://', website)
+WHERE website IS NOT NULL 
+  AND website NOT LIKE 'http%';
+
+-- 5. CLEAN NAME
+-- ============================================================================
+
+-- Trim and standardize spacing
+UPDATE hospitals 
+SET name = TRIM(REGEXP_REPLACE(name, '\\s+', ' '))
+WHERE name IS NOT NULL;
+
+-- 6. CLEAN ADDRESS
+-- ============================================================================
+
+-- Trim and standardize spacing
+UPDATE hospitals 
+SET address = TRIM(REGEXP_REPLACE(address, '\\s+', ' '))
+WHERE address IS NOT NULL;
+
+-- Remove trailing commas
+UPDATE hospitals 
+SET address = TRIM(TRAILING ',' FROM address)
+WHERE address LIKE '%,';
+
+-- Remove 'Morocco' and 'Maroc' from end of address (it's redundant)
+UPDATE hospitals 
+SET address = TRIM(REGEXP_REPLACE(address, ',?\\s*(Morocco|Maroc)\\s*$', ''))
+WHERE address IS NOT NULL;
+
+-- 7. CLEAN TYPE
+-- ============================================================================
+
+-- Standardize hospital types
+UPDATE hospitals 
+SET type = UPPER(TRIM(type))
+WHERE type IS NOT NULL;
+
+-- 8. CLEAN BEDS (capacity)
+-- ============================================================================
+
+-- Set invalid bed counts to NULL
+UPDATE hospitals 
+SET beds = NULL
+WHERE beds IS NOT NULL 
+  AND (beds < 0 OR beds > 10000);
+
+-- 9. STANDARDIZE place_id
+-- ============================================================================
+
+-- Ensure place_id is valid (exists in places table)
+UPDATE hospitals h
+LEFT JOIN places p ON h.place_id = p.id
+SET h.place_id = NULL
+WHERE h.place_id IS NOT NULL AND p.id IS NULL;
+
+-- 10. REMOVE DUPLICATE HOSPITALS
+-- ============================================================================
+
+-- Keep only the most complete record for duplicates (based on name + address)
+DELETE h1 FROM hospitals h1
+INNER JOIN hospitals h2 
+WHERE h1.name = h2.name 
+  AND h1.address = h2.address
+  AND h1.id > h2.id;
+
+-- ============================================================================
+-- VERIFICATION QUERIES
+-- ============================================================================
+
+-- Check phone cleaning results
+SELECT 
+    'Valid phones' as metric,
+    COUNT(*) as count
+FROM hospitals 
+WHERE phone IS NOT NULL AND LENGTH(phone) = 10
+
+UNION ALL
+
+SELECT 
+    'NULL phones' as metric,
+    COUNT(*) as count
+FROM hospitals 
+WHERE phone IS NULL
+
+UNION ALL
+
+-- Check email cleaning results
+SELECT 
+    'Valid emails' as metric,
+    COUNT(*) as count
+FROM hospitals 
+WHERE email IS NOT NULL AND email LIKE '%@%.%'
+
+UNION ALL
+
+SELECT 
+    'NULL emails' as metric,
+    COUNT(*) as count
+FROM hospitals 
+WHERE email IS NULL
+
+UNION ALL
+
+-- Check website cleaning results
+SELECT 
+    'Valid websites' as metric,
+    COUNT(*) as count
+FROM hospitals 
+WHERE website IS NOT NULL
+
+UNION ALL
+
+SELECT 
+    'NULL websites' as metric,
+    COUNT(*) as count
+FROM hospitals 
+WHERE website IS NULL;
+
+-- Show sample of cleaned data
+SELECT 
+    id,
+    name,
+    phone,
+    email,
+    website,
+    type,
+    beds
+FROM hospitals 
+LIMIT 20;
+
+-- Show hospitals with issues
+SELECT 
+    id,
+    name,
+    phone,
+    email,
+    address
+FROM hospitals
+WHERE (phone IS NULL AND email IS NULL)
+   OR beds IS NULL
+   OR place_id IS NULL
+ORDER BY id
+LIMIT 50;
