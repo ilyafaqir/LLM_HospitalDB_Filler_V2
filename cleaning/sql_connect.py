@@ -1,212 +1,254 @@
 import mysql.connector
 from mysql.connector import Error
+import re
+import time
 
-def execute_sql_file(sql_file_path, host, user, password, database):
-    """
-    Execute a SQL file containing multiple statements against a MySQL database.
-    
-    Args:
-        sql_file_path: Path to the SQL file
-        host: Database host
-        user: Database username
-        password: Database password
-        database: Database name
-    """
-    conn = None
-    cursor = None
-    
+def clean_sql_statement(statement):
+    """Remove comments and clean up SQL statement"""
+    # Remove single-line comments
+    lines = statement.split('\n')
+    cleaned_lines = []
+    for line in lines:
+        # Remove comments but keep the rest of the line
+        if '--' in line:
+            line = line[:line.index('--')]
+        if line.strip():
+            cleaned_lines.append(line)
+    return '\n'.join(cleaned_lines).strip()
+
+def is_select_statement(statement):
+    """Check if statement is a SELECT query"""
+    stmt_upper = statement.strip().upper()
+    return stmt_upper.startswith('SELECT')
+
+def execute_sql_file(connection, sql_file_path):
+    """Execute SQL statements from a file"""
     try:
         # Read the SQL file
         print(f"Reading SQL file: {sql_file_path}")
-        with open(sql_file_path, 'r', encoding='utf-8') as f:
-            sql_content = f.read()
+        with open(sql_file_path, 'r', encoding='utf-8') as file:
+            sql_content = file.read()
         
-        # Connect to database
-        print(f"Connecting to database: {database}")
-        conn = mysql.connector.connect(
-            host=host,
-            user=user,
-            password=password,
-            database=database,
-            allow_local_infile=True
-        )
+        print(f"File size: {len(sql_content)} characters\n")
         
-        if conn.is_connected():
-            print("Successfully connected to database")
+        # Split by semicolons (but be careful with semicolons in strings)
+        statements = []
+        current_statement = []
+        in_string = False
+        
+        for char in sql_content:
+            if char == "'" and (not current_statement or current_statement[-1] != '\\'):
+                in_string = not in_string
             
-            # Split by custom delimiter blocks
-            statements = []
-            current_stmt = []
-            current_delimiter = ';'
-            in_delimiter_block = False
+            current_statement.append(char)
             
-            for line in sql_content.split('\n'):
-                line_stripped = line.strip()
+            if char == ';' and not in_string:
+                stmt = ''.join(current_statement)
+                statements.append(stmt)
+                current_statement = []
+        
+        # Add any remaining content
+        if current_statement:
+            stmt = ''.join(current_statement)
+            if stmt.strip():
+                statements.append(stmt)
+        
+        print(f"Found {len(statements)} SQL statements\n")
+        
+        executed_count = 0
+        error_count = 0
+        skipped_count = 0
+        
+        for i, statement in enumerate(statements, 1):
+            # Clean the statement
+            cleaned = clean_sql_statement(statement)
+            
+            # Skip empty statements
+            if not cleaned:
+                continue
+            
+            # Show preview of statement
+            preview = cleaned.replace('\n', ' ')[:150]
+            print(f"\n[{i}/{len(statements)}] Executing: {preview}...")
+            
+            # Check if it's a SELECT statement
+            if is_select_statement(cleaned):
+                print(f"    ⊘ SKIPPED - SELECT statements are not executed (use for verification only)")
+                skipped_count += 1
+                continue
+            
+            cursor = None
+            try:
+                # Create a new cursor for each statement
+                cursor = connection.cursor(buffered=True)
                 
-                # Check for delimiter change
-                if line_stripped.upper().startswith('DELIMITER'):
-                    # Save current statement if exists
-                    if current_stmt:
-                        statements.append(('\n'.join(current_stmt), in_delimiter_block))
-                        current_stmt = []
-                    # Update delimiter
-                    new_delim = line_stripped.split()[-1]
-                    in_delimiter_block = (new_delim != ';')
-                    current_delimiter = new_delim
-                    continue
+                # Execute the statement
+                cursor.execute(cleaned)
                 
-                # Add line to current statement
-                if line_stripped:
-                    current_stmt.append(line)
-                
-                # Check if statement is complete
-                if line_stripped.endswith(current_delimiter):
-                    stmt = '\n'.join(current_stmt)
-                    # Remove the delimiter from the statement
-                    stmt = stmt.rstrip(current_delimiter).strip()
-                    if stmt:
-                        statements.append((stmt, in_delimiter_block))
-                    current_stmt = []
-            
-            # Add final statement if exists
-            if current_stmt:
-                stmt = '\n'.join(current_stmt).strip()
-                if stmt:
-                    statements.append((stmt, False))
-            
-            # Execute each statement
-            total = len(statements)
-            success_count = 0
-            error_count = 0
-            
-            print(f"\nExecuting {total} SQL statements...")
-            print("-" * 60)
-            
-            for i, (stmt, is_proc_func) in enumerate(statements, 1):
-                # Skip empty statements and comments
-                if not stmt or stmt.startswith('--'):
-                    continue
-                
+                # Consume any results immediately
                 try:
-                    # Show progress
-                    preview = stmt[:60].replace('\n', ' ')
-                    stmt_type = "PROCEDURE/FUNCTION" if is_proc_func else "STATEMENT"
-                    print(f"[{i}/{total}] {stmt_type}: {preview}...")
-                    
-                    # For procedures/functions, check if exists and drop first
-                    if is_proc_func:
-                        stmt_upper = stmt.upper()
-                        if 'CREATE PROCEDURE' in stmt_upper:
-                            proc_name = stmt.split('(')[0].split()[-1]
-                            try:
-                                cursor = conn.cursor()
-                                cursor.execute(f"DROP PROCEDURE IF EXISTS {proc_name}")
-                                conn.commit()
-                                cursor.close()
-                                print(f"  → Dropped existing procedure: {proc_name}")
-                            except:
-                                pass
-                        elif 'CREATE FUNCTION' in stmt_upper:
-                            func_name = stmt.split('(')[0].split()[-1]
-                            try:
-                                cursor = conn.cursor()
-                                cursor.execute(f"DROP FUNCTION IF EXISTS {func_name}")
-                                conn.commit()
-                                cursor.close()
-                                print(f"  → Dropped existing function: {func_name}")
-                            except:
-                                pass
-                    
-                    # Create new cursor for each statement
-                    cursor = conn.cursor()
-                    
-                    # Execute statement
-                    cursor.execute(stmt)
-                    
-                    # Consume all results (important for multi-result statements)
-                    while cursor.nextset():
+                    cursor.fetchall()
+                except:
+                    pass
+                
+                connection.commit()
+                
+                rows_affected = cursor.rowcount
+                print(f"    ✓ SUCCESS - Rows affected: {rows_affected}")
+                executed_count += 1
+                
+            except Error as e:
+                error_msg = str(e)
+                
+                # Special handling for "column doesn't exist" errors (not critical)
+                if "Can't DROP COLUMN" in error_msg or "check that it exists" in error_msg:
+                    print(f"    ⚠ WARNING: {e} (Column may have been dropped already)")
+                else:
+                    print(f"    ✗ ERROR: {e}")
+                    print(f"    Statement preview: {cleaned[:300]}")
+                
+                # If "Commands out of sync" error, try to reset connection
+                if "Commands out of sync" in error_msg or "2014" in error_msg:
+                    print(f"    🔄 Attempting to reset connection...")
+                    try:
+                        if cursor:
+                            cursor.close()
+                        connection.rollback()
+                        # Small delay to let connection settle
+                        time.sleep(0.5)
+                    except:
                         pass
-                    
-                    # Show results if it's a SELECT query
-                    if stmt.strip().upper().startswith('SELECT'):
-                        try:
-                            results = cursor.fetchall()
-                            if results:
-                                print(f"  ✓ Returned {len(results)} rows")
-                                # Show first few rows
-                                for row in results[:5]:
-                                    print(f"    {row}")
-                                if len(results) > 5:
-                                    print(f"    ... and {len(results) - 5} more rows")
-                            else:
-                                print("  ✓ No results")
-                        except:
-                            print("  ✓ Executed successfully")
-                    else:
-                        affected = cursor.rowcount
-                        print(f"  ✓ Affected rows: {affected}")
-                    
-                    cursor.close()
-                    conn.commit()
-                    success_count += 1
-                    
-                except Error as e:
-                    error_code = e.errno if hasattr(e, 'errno') else None
-                    
-                    # Ignore "table doesn't exist" on TRUNCATE (it will be created later)
-                    if error_code == 1146 and 'TRUNCATE' in stmt.upper():
-                        print(f"  ⚠ Warning: {e} (will be created later)")
-                        success_count += 1
-                    else:
-                        error_count += 1
-                        print(f"  ✗ Error: {e}")
-                        if len(stmt) < 200:
-                            print(f"  Statement: {stmt}")
-                    
-                    # Continue with next statement
-                    if cursor:
+                else:
+                    try:
+                        connection.rollback()
+                    except:
+                        pass
+                error_count += 1
+                
+            finally:
+                # Always close cursor in finally block
+                if cursor:
+                    try:
                         cursor.close()
-                    continue
-            
-            print("-" * 60)
-            print(f"\nExecution complete!")
-            print(f"✓ Successful: {success_count}")
-            print(f"✗ Failed: {error_count}")
-            
+                    except:
+                        pass
+                    # Small delay between statements to prevent sync issues
+                    time.sleep(0.1)
+        
+        print("\n" + "="*60)
+        print(f"SUMMARY:")
+        print(f"  • Total statements: {len(statements)}")
+        print(f"  • Successfully executed: {executed_count}")
+        print(f"  • Skipped (SELECT): {skipped_count}")
+        print(f"  • Errors/Warnings: {error_count}")
+        print("="*60)
+        
     except FileNotFoundError:
-        print(f"Error: SQL file not found at {sql_file_path}")
-    except Error as e:
-        print(f"Database error: {e}")
+        print(f"✗ ERROR: SQL file not found: {sql_file_path}")
     except Exception as e:
-        print(f"Unexpected error: {e}")
-        import traceback
-        traceback.print_exc()
+        print(f"✗ ERROR: {e}")
+
+def verify_changes(connection):
+    """Verify that changes were made"""
+    print("\n" + "="*60)
+    print("VERIFICATION:")
+    print("="*60)
+    
+    cursor = None
+    try:
+        # Reconnect if needed
+        if not connection.is_connected():
+            print("⚠ Reconnecting to database...")
+            connection.reconnect()
+        
+        cursor = connection.cursor(buffered=True)
+        
+        # Check suppliers table
+        cursor.execute("SELECT COUNT(*) FROM suppliers WHERE name = UPPER(name)")
+        result = cursor.fetchone()
+        print(f"✓ Suppliers with uppercase names: {result[0]}")
+        
+        cursor.execute("SELECT COUNT(*) FROM suppliers WHERE city IS NOT NULL AND city != ''")
+        result = cursor.fetchone()
+        print(f"✓ Suppliers with city filled: {result[0]}")
+        
+        # Check places table
+        cursor.execute("SELECT COUNT(*) FROM places WHERE city = UPPER(city)")
+        result = cursor.fetchone()
+        print(f"✓ Places with uppercase cities: {result[0]}")
+        
+        cursor.execute("SELECT COUNT(*) FROM places WHERE region IS NOT NULL")
+        result = cursor.fetchone()
+        print(f"✓ Places with region filled: {result[0]}")
+        
+        cursor.execute("SELECT COUNT(*) FROM places WHERE region IS NULL OR province IS NULL")
+        result = cursor.fetchone()
+        print(f"⚠ Places missing region/province: {result[0]}")
+        
+    except Error as e:
+        print(f"✗ Verification error: {e}")
     finally:
-        # Close connections
         if cursor:
-            cursor.close()
-        if conn and conn.is_connected():
-            conn.close()
-            print("\nDatabase connection closed")
+            try:
+                cursor.close()
+            except:
+                pass
 
-
-# Usage example
-if __name__ == "__main__":
-    SQL_FILE_PATH = 'cleaning/cleaning.sql'
+def main():
+    """Main function to connect to database and run cleaning script"""
     
     # Database configuration
-    DB_CONFIG = {
+    config = {
         'host': 'localhost',
+        'database': 'morocco_health_db',
         'user': 'root',
         'password': '',
-        'database': 'morocco_health_db'
+        'autocommit': False,
+        'consume_results': True  # Automatically consume results
     }
     
-    # Execute the SQL file
-    execute_sql_file(
-        sql_file_path=SQL_FILE_PATH,
-        host=DB_CONFIG['host'],
-        user=DB_CONFIG['user'],
-        password=DB_CONFIG['password'],
-        database=DB_CONFIG['database']
-    )
+    SQL_FILE_PATH = 'cleaning/cleaning.sql'
+    
+    connection = None
+    
+    try:
+        # Connect to database
+        print("="*60)
+        print("CONNECTING TO DATABASE")
+        print("="*60)
+        connection = mysql.connector.connect(**config)
+        
+        if connection.is_connected():
+            db_info = connection.get_server_info()
+            print(f"✓ Connected to MySQL Server version {db_info}")
+            
+            cursor = connection.cursor()
+            cursor.execute("SELECT DATABASE();")
+            database_name = cursor.fetchone()
+            print(f"✓ Using database: {database_name[0]}")
+            cursor.close()
+            
+            # Execute the SQL file
+            print("\n" + "="*60)
+            print("EXECUTING SQL STATEMENTS")
+            print("="*60)
+            execute_sql_file(connection, SQL_FILE_PATH)
+            
+            # Verify changes
+            verify_changes(connection)
+            
+    except Error as e:
+        print(f"\n✗ ERROR connecting to MySQL: {e}")
+        print("\nPlease check:")
+        print("  1. MySQL server is running")
+        print("  2. Database credentials are correct")
+        print("  3. Database name exists")
+        print("  4. User has proper permissions")
+        
+    finally:
+        if connection and connection.is_connected():
+            connection.close()
+            print("\n✓ Database connection closed")
+
+if __name__ == "__main__":
+    main()

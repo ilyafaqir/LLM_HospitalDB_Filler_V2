@@ -1,420 +1,594 @@
-CREATE TABLE IF NOT EXISTS stg_places (
-    raw_id INT AUTO_INCREMENT PRIMARY KEY,
-    region VARCHAR(100),
-    province VARCHAR(100),
-    city VARCHAR(255),
-    validation_status VARCHAR(50) DEFAULT 'PENDING'
-);
-DELIMITER //
+-- ==========================================================
+-- 1. DROP UNUSED COLUMNS
+-- ==========================================================
+ALTER TABLE suppliers
+DROP COLUMN phone,
+DROP COLUMN responsible_pharmacist;
 
-CREATE PROCEDURE CleanPlaces()
-BEGIN
-    -- ==========================================================
-    -- 1. REMOVE NOISE (Suffixes & Arabic)
-    -- ==========================================================
-    
-    -- Remove administrative suffixes like (Mun.), (Arrond.) seen in Image 1
-    UPDATE stg_places
-    SET city = TRIM(REPLACE(REPLACE(city, '(Mun.)', ''), '(Arrond.)', ''))
-    WHERE validation_status = 'PENDING';
-
-    -- Remove Arabic text (Simple heuristic: keep text before the first Arabic char if possible, 
-    -- or just split by space if the format is consistently "FrenchName ArabicName")
-    -- Here we assume the format is "Name Name..." and we want to clean specific known patterns or non-latin chars
-    -- For MySQL 8.0+ we could use REGEXP_REPLACE. For compatibility, we'll use a safer logic:
-    
-    -- Fix specific rows seen in your image (201, 203, 204, 215, 217)
-    UPDATE stg_places SET city = 'Témara' WHERE city LIKE 'Témara%';
-    UPDATE stg_places SET city = 'Ait Ouqabli' WHERE city LIKE 'Ait Ouqabli%';
-    UPDATE stg_places SET city = 'Targuist' WHERE city LIKE 'Targuist%';
-    UPDATE stg_places SET city = 'Ksar-el-Kebir' WHERE city LIKE 'Ksar-el-Kebir%';
-    UPDATE stg_places SET city = 'Imouzzer Marmoucha' WHERE city LIKE 'Imouzzer Marmoucha%';
-    UPDATE stg_places SET city = 'Bni Karrich' WHERE city LIKE 'Bni Karrich%';
-
-    -- ==========================================================
-    -- 2. FIX "ADDRESS AS CITY" (Row 212)
-    -- ==========================================================
-    
-    -- Heuristic: If city contains "RUE" and "FES", it's Fès.
-    UPDATE stg_places 
-    SET city = 'Fès' 
-    WHERE city LIKE '%RUE%' AND city LIKE '%FES%' AND validation_status = 'PENDING';
-
-    -- General Case: If it starts with a number, it's likely an address. Flag it or try to extract.
-    -- Here we try to extract common cities if they appear in the address string.
-    UPDATE stg_places
-    SET city = CASE 
-        WHEN city LIKE '%CASABLANCA%' THEN 'Casablanca'
-        WHEN city LIKE '%RABAT%' THEN 'Rabat'
-        WHEN city LIKE '%FES%' OR city LIKE '%FÈS%' THEN 'Fès'
-        WHEN city LIKE '%TANGER%' THEN 'Tanger'
-        ELSE city 
-    END
-    WHERE (city REGEXP '^[0-9]+' OR city LIKE '%RUE%') -- Detects "2 RUE..."
-    AND validation_status = 'PENDING';
-
-    -- ==========================================================
-    -- 3. STANDARDIZATION (Casing)
-    -- ==========================================================
-
-    -- Fix Uppercase names (TEMARA -> Temara, AOURIR -> Aourir)
-    UPDATE stg_places
-    SET city = CONCAT(UPPER(LEFT(city, 1)), LOWER(SUBSTRING(city, 2)))
-    WHERE validation_status = 'PENDING';
-
-    -- ==========================================================
-    -- 4. FILL MISSING REGIONS (Self-Healing)
-    -- ==========================================================
-
-    -- If we have "Temara" with a region in row 1, but NULL in row 205, copy row 1's data.
-    UPDATE stg_places t1
-    JOIN stg_places t2 ON t1.city = t2.city
-    SET t1.region = t2.region, t1.province = t2.province
-    WHERE t1.region IS NULL AND t2.region IS NOT NULL
-    AND t1.validation_status = 'PENDING';
-
-    -- ==========================================================
-    -- 5. FINAL VALIDATION
-    -- ==========================================================
-    
-    -- Mark valid rows
-    UPDATE stg_places SET validation_status = 'VALID' WHERE city IS NOT NULL;
-
-END //
-
-DELIMITER ;
-INSERT INTO places (region, province, city)
-SELECT DISTINCT 
-    COALESCE(region, 'Region Inconnue'), -- Handle remaining NULLs
-    COALESCE(province, 'Province Inconnue'), 
-    city
-FROM stg_places
-WHERE validation_status = 'VALID'
-GROUP BY city; -- Ensures we only get one row per city
--- ========================================================
--- PART 1: DATA CLEANING & STANDARDIZATION
--- ========================================================
-
--- 1. Standardize Text (Uppercase, Trim, Fix Spacing)
-UPDATE medications
+-- ==========================================================
+-- 2. BASIC STANDARDIZATION
+-- ==========================================================
+-- Upper case and trim everything to make matching easier
+UPDATE suppliers
 SET 
     name = UPPER(TRIM(name)),
-    active_substance = UPPER(TRIM(active_substance)),
-    form = UPPER(TRIM(form)),
-    presentation = UPPER(TRIM(presentation)),
-    therapeutic_class = UPPER(TRIM(therapeutic_class)),
-    manufacturer = UPPER(TRIM(manufacturer)),
-    commercialization_status = TRIM(commercialization_status);
+    category = UPPER(TRIM(category)),
+    activity = TRIM(activity),
+    address = UPPER(TRIM(address));
 
--- 2. Clean Ingredient Separators
--- Changes "PARACETAMOL // CAFEINE" to "PARACETAMOL + CAFEINE"
-UPDATE medications
-SET active_substance = REGEXP_REPLACE(active_substance, '\\s*//\\s*', ' + ');
+-- ==========================================================
+-- 3. EXTRACT CITY FROM ADDRESS
+-- ==========================================================
+-- This fills the empty 'city' column by finding city names hidden in the address
+UPDATE suppliers
+SET city = CASE
+    -- Major Cities
+    WHEN address LIKE '%CASABLANCA%' THEN 'CASABLANCA'
+    WHEN address LIKE '%RABAT%' THEN 'RABAT'
+    WHEN address LIKE '%TANGER%' THEN 'TANGER'
+    WHEN address LIKE '%MARRAKECH%' THEN 'MARRAKECH'
+    WHEN address LIKE '%AGADIR%' THEN 'AGADIR'
+    WHEN address LIKE '%FES%' OR address LIKE '%FÈS%' THEN 'FES'
+    WHEN address LIKE '%TIFLET%' THEN 'TIFLET'
+    WHEN address LIKE '%TEMARA%' OR address LIKE '%TÉMARA%' THEN 'TEMARA'
+    WHEN address LIKE '%SALE%' OR address LIKE '%SALÉ%' THEN 'SALE'
+    WHEN address LIKE '%KENITRA%' THEN 'KENITRA'
+    WHEN address LIKE '%MOHAMMEDIA%' THEN 'MOHAMMEDIA'
+    
+    -- Neighborhoods (Clean based on your image)
+    WHEN address LIKE '%SIDI MAAROUF%' OR address LIKE '%SIDI MOUMEN%' THEN 'CASABLANCA'
+    WHEN address LIKE '%HAY RIYAD%' OR address LIKE '%HAY RIAD%' THEN 'RABAT'
+    
+    ELSE city 
+END
+WHERE city IS NULL OR city = 'NULL' OR city = '';
 
--- 3. Fix Dosage Spacing & Decimals
--- Adds space between numbers and letters (e.g., "500MG" -> "500 MG")
-UPDATE medications
-SET dosage = REGEXP_REPLACE(dosage, '([0-9])([a-zA-Z])', '$1 $2');
+-- ==========================================================
+-- 4. CLEAN ADDRESS TEXT
+-- ==========================================================
 
--- Fix Commas: Changes "0,4 ML" to "0.4 ML" (Standard SQL decimal format)
-UPDATE medications
-SET dosage = REPLACE(dosage, ',', '.')
-WHERE dosage LIKE '%,%';
+-- Fix "N22RUE" -> "N 22 RUE" (adds space between number and text)
+UPDATE suppliers
+SET address = REGEXP_REPLACE(address, '([0-9])([A-Z])', '$1 $2');
 
--- 4. Clean Numeric Prices
--- If 'price_public' was imported as text with commas (e.g. "3630,00"), fix it:
--- (Note: If your column is already FLOAT/DECIMAL, you can skip this)
--- UPDATE medications SET price_public = REPLACE(price_public, ',', '.') WHERE price_public LIKE '%,%';
+-- Fix "11.RUE" -> "11. RUE" (adds space after dot)
+UPDATE suppliers
+SET address = REPLACE(address, '.', '. ');
 
--- 5. Handle "NULL" Strings
--- Converts the text string 'NULL' to a real SQL NULL value
-UPDATE medications SET price_public = NULL WHERE price_public = 'NULL';
-UPDATE medications SET price_hospital = NULL WHERE price_hospital = 'NULL';
+-- Remove "MAROC" from the address field since we know the country
+UPDATE suppliers
+SET address = TRIM(REPLACE(REPLACE(address, ' MAROC', ''), ' MOROCCO', ''));
+-- ==========================================================
+-- 1. REMOVE ARABIC CHARACTERS & NOISE
+-- ==========================================================
+-- Logic: Keep only Latin letters (A-Z), Accents (éè...), Spaces, and Hyphens.
+-- This effectively removes Arabic script without breaking names like "Témara".
 
--- ========================================================
--- PART 2: DATA VALIDATION
--- ========================================================
-
--- 6. Check for Logical Price Errors
--- Flags rows where the Hospital Price (usually lower) is higher than the Public Price
-SELECT * FROM medications 
-WHERE price_hospital > price_public;
-
--- 7. Check for Duplicates
--- Identifies drugs that look exactly the same
-SELECT name, dosage, form, COUNT(*) as duplicate_count
-FROM medications
-GROUP BY name, dosage, form
-HAVING COUNT(*) > 1;
-
--- 8. Check for Dosage Mismatches
--- Finds rows where you have 2 ingredients ("+") but only 1 dosage value (no "/")
-SELECT name, active_substance, dosage 
-FROM medications 
-WHERE active_substance LIKE '%+%' 
-  AND dosage NOT LIKE '%/%'
-  AND dosage NOT LIKE '%+%';
-
--- 9. View Final Cleaned Data
-SELECT * FROM medications LIMIT 50;
--- ========================================================
--- PART 0: SETUP ALGORITHMS & KNOWLEDGE BASE
--- ========================================================
-
--- 1. Create Levenshtein Function (Required for "Fuzzy Matching")
--- Calculates the edit distance between two strings (e.g., FEZ vs FES = 1).
-DROP FUNCTION IF EXISTS LEVENSHTEIN;
-DELIMITER $$
-CREATE FUNCTION LEVENSHTEIN(s1 VARCHAR(255), s2 VARCHAR(255))
-RETURNS INT
-DETERMINISTIC
-BEGIN
-    DECLARE s1_len, s2_len, i, j, c, c_temp, cost INT;
-    DECLARE s1_char CHAR;
-    DECLARE cv0, cv1 VARBINARY(256);
-    SET s1_len = CHAR_LENGTH(s1), s2_len = CHAR_LENGTH(s2), cv1 = 0x00, j = 1, i = 1, c = 0;
-    IF s1 = s2 THEN RETURN 0;
-    ELSEIF s1_len = 0 THEN RETURN s2_len;
-    ELSEIF s2_len = 0 THEN RETURN s1_len;
-    END IF;
-    WHILE j <= s2_len DO SET cv1 = CONCAT(cv1, UNHEX(HEX(j))), j = j + 1; END WHILE;
-    WHILE i <= s1_len DO
-        SET s1_char = SUBSTRING(s1, i, 1), c = i, cv0 = UNHEX(HEX(i)), j = 1;
-        WHILE j <= s2_len DO
-            SET c = c + 1;
-            IF s1_char = SUBSTRING(s2, j, 1) THEN SET cost = 0; ELSE SET cost = 1; END IF;
-            SET c_temp = CONV(HEX(SUBSTRING(cv1, j, 1)), 16, 10) + cost;
-            IF c > c_temp THEN SET c = c_temp; END IF;
-            SET c_temp = CONV(HEX(SUBSTRING(cv1, j + 1, 1)), 16, 10) + 1;
-            IF c > c_temp THEN SET c = c_temp; END IF;
-            SET cv0 = CONCAT(cv0, UNHEX(HEX(c))), j = j + 1;
-        END WHILE;
-        SET cv1 = cv0, i = i + 1;
-    END WHILE;
-    RETURN c;
-END$$
-DELIMITER ;
-
--- 2. Create & Load the "Knowledge Base" (The Dictionary)
--- This allows the algorithms to fix specific missing data without hardcoding logic.
-CREATE TEMPORARY TABLE IF NOT EXISTS city_dictionary (
-    name_clean VARCHAR(100), 
-    region VARCHAR(100), 
-    province VARCHAR(100)
-);
-TRUNCATE TABLE city_dictionary; 
-
--- LOAD KNOWN CORRECT DATA (Add any new missing cities here)
-INSERT INTO city_dictionary (name_clean, region, province) VALUES 
-('MIDAR', 'Oriental', 'Driouch'),
-('TIT MELLIL', 'Casablanca-Settat', 'Médiouna'),
-('SIDI ALLAL EL BAHRAOUI', 'Rabat-Salé-Kénitra', 'Khemisset'),
-('CHICHAOUA', 'Marrakech-Safi', 'Chichaoua'),
-('AIT MELLOUL', 'Souss-Massa', 'Inezgane-Aït Melloul'),
-('SALE', 'Rabat-Salé-Kénitra', 'Salé'),
-('BENI ANSAR', 'Oriental', 'Nador'),
-('TAOURIRT', 'Oriental', 'Taourirt'),
-('MOHAMMEDIA', 'Casablanca-Settat', 'Mohammedia'),
-('KENITRA', 'Rabat-Salé-Kénitra', 'Kénitra'),
-('RABAT', 'Rabat-Salé-Kénitra', 'Rabat'),
-('CASABLANCA', 'Casablanca-Settat', 'Casablanca'),
-('KSAR EL KEBIR', 'Tanger-Tétouan-Al Hoceïma', 'Larache'),
-('MARTIL', 'Tanger-Tétouan-Al Hoceïma', 'M\'diq-Fnideq'),
-('SAADINA', 'Tanger-Tétouan-Al Hoceïma', 'Tétouan'),
-('TOUISSIT', 'Oriental', 'Jerada'),
-('TOULAL', 'Fès-Meknès', 'Meknès'),
-('IMOUZZER MARMOUCHA', 'Fès-Meknès', 'Boulemane'),
-('AOURIR', 'Souss-Massa', 'Agadir-Ida-Ou-Tanane'),
-('SIDI IFNI', 'Guelmim-Oued Noun', 'Sidi Ifni'),
-('TARGUIST', 'Tanger-Tétouan-Al Hoceïma', 'Al Hoceïma'),
-('BEN AHMED', 'Casablanca-Settat', 'Settat'),
-('BELYOUNECH', 'Tanger-Tétouan-Al Hoceïma', 'M\'diq-Fnideq'),
-('CHEMAIA', 'Marrakech-Safi', 'Youssoufia');
-
-
--- ========================================================
--- PART 1: BASIC CLEANING
--- ========================================================
-
--- 3. Standardize Text (Uppercase, Trim, Remove Arabic/Symbols)
 UPDATE places
-SET city = UPPER(TRIM(REGEXP_REPLACE(city, '[^a-zA-Z0-9 ]', '')));
+SET city = TRIM(REGEXP_REPLACE(city, '[^a-zA-Z0-9 àâäéèêëîïôöùûüçÀÂÄÉÈÊËÎÏÔÖÙÛÜÇ-]', ''))
+WHERE city REGEXP '[^a-zA-Z0-9 ]';
 
--- 4. Convert 'NULL' strings to real SQL NULLs
-UPDATE places SET region = NULL WHERE region = 'NULL';
-UPDATE places SET province = NULL WHERE province = 'NULL';
-
--- 5. Delete Obvious Junk (Streets starting with numbers)
-DELETE FROM places 
-WHERE city REGEXP '^[0-9]+' -- Starts with a number (e.g. "87 RUE...")
-   OR city LIKE 'RUE %';
-
-
--- ========================================================
--- PART 2: THE "REPAIR" ALGORITHMS
--- ========================================================
-
--- 6. Algorithm A: The "Dictionary Matcher"
--- Matches broken rows to the dictionary. Handles exact matches and "spaceless" matches.
-UPDATE places p
-JOIN city_dictionary d 
-    ON REPLACE(REPLACE(p.city, ' ', ''), '-', '') = REPLACE(REPLACE(d.name_clean, ' ', ''), '-', '')
+-- ==========================================================
+-- 2. STANDARDIZE TEXT
+-- ==========================================================
+UPDATE places
 SET 
-    p.city = d.name_clean, -- Fixes spacing (e.g., KSARELKEBIR -> KSAR EL KEBIR)
-    p.region = d.region,
-    p.province = d.province
-WHERE p.region IS NULL;
+    city = UPPER(TRIM(city)),
+    region = NULLIF(region, 'NULL'),
+    province = NULLIF(province, 'NULL');
 
--- 7. Algorithm B: The "Phonetic Matcher" (Soundex)
--- Matches things that sound the same (e.g., SHISHAWA -> CHICHAOUA)
-UPDATE places p
-JOIN city_dictionary d ON SOUNDEX(p.city) = SOUNDEX(d.name_clean)
+-- ==========================================================
+-- 3. CLEAN "NOISY" NEIGHBORHOOD NAMES
+-- ==========================================================
+-- Removes extra details to standardize on the main City name
+
+-- Fix "FES MDINA..." -> "FES"
+UPDATE places 
+SET city = 'FES' 
+WHERE city LIKE 'FES %' OR city LIKE 'FÈS %';
+
+-- Fix "MARRAKECH GUELIZ..." -> "MARRAKECH"
+UPDATE places 
+SET city = 'MARRAKECH' 
+WHERE city LIKE 'MARRAKECH %';
+
+-- Fix "TANGER MEDINA..." -> "TANGER"
+UPDATE places 
+SET city = 'TANGER' 
+WHERE city LIKE 'TANGER %';
+
+-- Fix "CASABLANCA ANFA..." -> "CASABLANCA"
+UPDATE places 
+SET city = 'CASABLANCA' 
+WHERE city LIKE 'CASABLANCA %';
+
+-- ==========================================================
+-- 4. FILL MISSING REGIONS (Hardcoded Fixes)
+-- ==========================================================
+-- Fills in the specific NULL rows seen in your file
+
+UPDATE places 
+SET region = 'Rabat-Salé-Kénitra', province = 'Skhirate-Témara'
+WHERE city = 'TEMARA' AND region IS NULL;
+
+UPDATE places 
+SET region = 'Béni Mellal-Khénifra', province = 'Béni Mellal'
+WHERE city = 'BENI MELLAL' AND region IS NULL;
+
+UPDATE places 
+SET region = 'Casablanca-Settat', province = 'Settat'
+WHERE city = 'SETTAT' AND region IS NULL;
+
+UPDATE places 
+SET region = 'Béni Mellal-Khénifra', province = 'Azilal'
+WHERE city = 'AIT OUQABLI' AND region IS NULL;
+
+-- ==========================================================
+-- 5. SELF-HEALING (Auto-Fill remaining NULLs)
+-- ==========================================================
+-- If "Agadir" has region data in row 1, copy it to row 50
+UPDATE places p1
+JOIN places p2 ON p1.city = p2.city
 SET 
-    p.city = d.name_clean,
-    p.region = d.region,
-    p.province = d.province
-WHERE p.region IS NULL;
+    p1.region = p2.region,
+    p1.province = p2.province
+WHERE 
+    p1.region IS NULL 
+    AND p2.region IS NOT NULL
+    AND p1.id <> p2.id;
 
--- 8. Algorithm C: The "Typo Fixer" (Levenshtein)
--- Matches rows in the table to OTHER valid rows in the table that are 1-2 edits away.
-UPDATE places p_bad
-JOIN places p_good ON p_bad.id != p_good.id
+-- ==========================================================
+-- STEP 1: STANDARDIZE CITY NAMES (Fix duplicates/variations)
+-- ==========================================================
+
+-- Standardize FEZ variations
+UPDATE places SET city = 'FES' WHERE city IN ('FEZ', 'FÈS', 'FEŞ');
+
+-- Standardize SALE variations
+UPDATE places SET city = 'SALE' WHERE city = 'SALÉ';
+
+-- Standardize TEMARA variations
+UPDATE places SET city = 'TEMARA' WHERE city = 'TÉMARA';
+
+-- Standardize other common variations
+UPDATE places SET city = 'KENITRA' WHERE city = 'KÉNITRA';
+UPDATE places SET city = 'MEKNES' WHERE city = 'MEKNÈS';
+UPDATE places SET city = 'TETOUAN' WHERE city = 'TÉTOUAN';
+
+-- ==========================================================
+-- STEP 2: FILL ALL REGIONS AND PROVINCES
+-- ==========================================================
+
+UPDATE places
 SET 
-    p_bad.city = p_good.city,
-    p_bad.region = p_good.region,
-    p_bad.province = p_good.province
+    region = CASE city
+        -- Casablanca-Settat Region
+        WHEN 'CASABLANCA' THEN 'Casablanca-Settat'
+        WHEN 'MOHAMMEDIA' THEN 'Casablanca-Settat'
+        WHEN 'SETTAT' THEN 'Casablanca-Settat'
+        WHEN 'BERRECHID' THEN 'Casablanca-Settat'
+        WHEN 'EL JADIDA' THEN 'Casablanca-Settat'
+        WHEN 'CHEMAIA' THEN 'Casablanca-Settat'
+        WHEN 'ECHEMMAIA' THEN 'Casablanca-Settat'
+        WHEN 'BENSLIMANE' THEN 'Casablanca-Settat'
+        WHEN 'MEDIOUNA' THEN 'Casablanca-Settat'
+        
+        -- Rabat-Salé-Kénitra Region
+        WHEN 'RABAT' THEN 'Rabat-Salé-Kénitra'
+        WHEN 'SALE' THEN 'Rabat-Salé-Kénitra'
+        WHEN 'TEMARA' THEN 'Rabat-Salé-Kénitra'
+        WHEN 'KENITRA' THEN 'Rabat-Salé-Kénitra'
+        WHEN 'TIFLET' THEN 'Rabat-Salé-Kénitra'
+        WHEN 'SIDI ALI BELKACEM' THEN 'Rabat-Salé-Kénitra'
+        WHEN 'KHEMISSET' THEN 'Rabat-Salé-Kénitra'
+        WHEN 'SIDI KACEM' THEN 'Rabat-Salé-Kénitra'
+        WHEN 'SKHIRAT' THEN 'Rabat-Salé-Kénitra'
+        WHEN 'RUE MOHAMED EL HANSALI FES' THEN 'Rabat-Salé-Kénitra'
+        
+        -- Fès-Meknès Region
+        WHEN 'FES' THEN 'Fès-Meknès'
+        WHEN 'MEKNES' THEN 'Fès-Meknès'
+        WHEN 'TAZA' THEN 'Fès-Meknès'
+        WHEN 'IFRANE' THEN 'Fès-Meknès'
+        WHEN 'SEFROU' THEN 'Fès-Meknès'
+        WHEN 'EL HAJEB' THEN 'Fès-Meknès'
+        
+        -- Tanger-Tétouan-Al Hoceïma Region
+        WHEN 'TANGER' THEN 'Tanger-Tétouan-Al Hoceïma'
+        WHEN 'TETOUAN' THEN 'Tanger-Tétouan-Al Hoceïma'
+        WHEN 'LARACHE' THEN 'Tanger-Tétouan-Al Hoceïma'
+        WHEN 'OUAZZANE' THEN 'Tanger-Tétouan-Al Hoceïma'
+        WHEN 'BELYOUNECH' THEN 'Tanger-Tétouan-Al Hoceïma'
+        WHEN 'ASSILAH' THEN 'Tanger-Tétouan-Al Hoceïma'
+        WHEN 'CHEFCHAOUEN' THEN 'Tanger-Tétouan-Al Hoceïma'
+        WHEN 'AL HOCEIMA' THEN 'Tanger-Tétouan-Al Hoceïma'
+        WHEN 'FNIDEQ' THEN 'Tanger-Tétouan-Al Hoceïma'
+        
+        -- Souss-Massa Region
+        WHEN 'AGADIR' THEN 'Souss-Massa'
+        WHEN 'TIZNIT' THEN 'Souss-Massa'
+        WHEN 'TIMITAR' THEN 'Souss-Massa'
+        WHEN 'DRARGA' THEN 'Souss-Massa'
+        WHEN 'INEZGANE' THEN 'Souss-Massa'
+        WHEN 'AIT MELLOUL' THEN 'Souss-Massa'
+        WHEN 'TAROUDANT' THEN 'Souss-Massa'
+        WHEN 'TATA' THEN 'Souss-Massa'
+        
+        -- Marrakech-Safi Region
+        WHEN 'MARRAKECH' THEN 'Marrakech-Safi'
+        WHEN 'YOUSSOUFIA' THEN 'Marrakech-Safi'
+        WHEN 'SAFI' THEN 'Marrakech-Safi'
+        WHEN 'ESSAOUIRA' THEN 'Marrakech-Safi'
+        WHEN 'KELAA DES SRAGHNA' THEN 'Marrakech-Safi'
+        
+        -- Béni Mellal-Khénifra Region
+        WHEN 'KHOURIBGA' THEN 'Béni Mellal-Khénifra'
+        WHEN 'CHP KHOURIBGA' THEN 'Béni Mellal-Khénifra'
+        WHEN 'BENI MELLAL' THEN 'Béni Mellal-Khénifra'
+        WHEN 'AZILAL' THEN 'Béni Mellal-Khénifra'
+        WHEN 'KHENIFRA' THEN 'Béni Mellal-Khénifra'
+        WHEN 'FQUIH BEN SALAH' THEN 'Béni Mellal-Khénifra'
+        
+        -- Oriental Region
+        WHEN 'OUJDA' THEN 'Oriental'
+        WHEN 'NADOR' THEN 'Oriental'
+        WHEN 'BERKANE' THEN 'Oriental'
+        WHEN 'TAOURIRT' THEN 'Oriental'
+        WHEN 'TAURIRT' THEN 'Oriental'
+        WHEN 'JERADA' THEN 'Oriental'
+        WHEN 'FIGUIG' THEN 'Oriental'
+        
+        -- Drâa-Tafilalet Region
+        WHEN 'ERRACHIDIA' THEN 'Drâa-Tafilalet'
+        WHEN 'OUARZAZATE' THEN 'Drâa-Tafilalet'
+        WHEN 'TINGHIR' THEN 'Drâa-Tafilalet'
+        WHEN 'ZAGORA' THEN 'Drâa-Tafilalet'
+        
+        -- Laâyoune-Sakia El Hamra Region
+        WHEN 'LAAYOUNE' THEN 'Laâyoune-Sakia El Hamra'
+        
+        -- Dakhla-Oued Ed-Dahab Region
+        WHEN 'DAKHLA' THEN 'Dakhla-Oued Ed-Dahab'
+        
+        -- Guelmim-Oued Noun Region
+        WHEN 'GUELMIM' THEN 'Guelmim-Oued Noun'
+        WHEN 'TAN-TAN' THEN 'Guelmim-Oued Noun'
+        WHEN 'SIDI IFNI' THEN 'Guelmim-Oued Noun'
+        WHEN 'ASSA-ZAG' THEN 'Guelmim-Oued Noun'
+        WHEN 'TOULAL' THEN 'Guelmim-Oued Noun'
+        
+        -- Additional cities
+        WHEN 'SAADINA' THEN 'Casablanca-Settat'
+        
+        ELSE region
+    END,
+    province = CASE city
+        -- Casablanca-Settat Provinces
+        WHEN 'CASABLANCA' THEN 'Casablanca'
+        WHEN 'MOHAMMEDIA' THEN 'Mohammedia'
+        WHEN 'SETTAT' THEN 'Settat'
+        WHEN 'CHEMAIA' THEN 'El Jadida'
+        WHEN 'ECHEMMAIA' THEN 'El Jadida'
+        WHEN 'BENSLIMANE' THEN 'Benslimane'
+        WHEN 'BERRECHID' THEN 'Berrechid'
+        WHEN 'EL JADIDA' THEN 'El Jadida'
+        WHEN 'MEDIOUNA' THEN 'Médiouna'
+        WHEN 'SAADINA' THEN 'El Jadida'
+        
+        -- Rabat-Salé-Kénitra Provinces
+        WHEN 'RABAT' THEN 'Rabat'
+        WHEN 'SALE' THEN 'Salé'
+        WHEN 'TEMARA' THEN 'Skhirate-Témara'
+        WHEN 'KENITRA' THEN 'Kénitra'
+        WHEN 'TIFLET' THEN 'Khémisset'
+        WHEN 'SIDI ALI BELKACEM' THEN 'Khémisset'
+        WHEN 'KHEMISSET' THEN 'Khémisset'
+        WHEN 'SIDI KACEM' THEN 'Sidi Kacem'
+        WHEN 'SKHIRAT' THEN 'Skhirate-Témara'
+        WHEN 'RUE MOHAMED EL HANSALI FES' THEN 'Kénitra'
+        
+        -- Fès-Meknès Provinces
+        WHEN 'FES' THEN 'Fès'
+        WHEN 'MEKNES' THEN 'Meknès'
+        WHEN 'TAZA' THEN 'Taza'
+        WHEN 'IFRANE' THEN 'Ifrane'
+        WHEN 'SEFROU' THEN 'Sefrou'
+        WHEN 'EL HAJEB' THEN 'El Hajeb'
+        
+        -- Tanger-Tétouan-Al Hoceïma Provinces
+        WHEN 'TANGER' THEN 'Tanger-Assilah'
+        WHEN 'TETOUAN' THEN 'Tétouan'
+        WHEN 'LARACHE' THEN 'Larache'
+        WHEN 'OUAZZANE' THEN 'Ouezzane'
+        WHEN 'BELYOUNECH' THEN 'Fahs-Anjra'
+        WHEN 'ASSILAH' THEN 'Tanger-Assilah'
+        WHEN 'CHEFCHAOUEN' THEN 'Chefchaouen'
+        WHEN 'AL HOCEIMA' THEN 'Al Hoceïma'
+        WHEN 'FNIDEQ' THEN 'M\'diq-Fnideq'
+        
+        -- Souss-Massa Provinces
+        WHEN 'AGADIR' THEN 'Agadir-Ida-Ou-Tanane'
+        WHEN 'TIZNIT' THEN 'Tiznit'
+        WHEN 'TIMITAR' THEN 'Agadir-Ida-Ou-Tanane'
+        WHEN 'DRARGA' THEN 'Agadir-Ida-Ou-Tanane'
+        WHEN 'INEZGANE' THEN 'Inezgane-Aït Melloul'
+        WHEN 'AIT MELLOUL' THEN 'Inezgane-Aït Melloul'
+        WHEN 'TAROUDANT' THEN 'Taroudannt'
+        WHEN 'TATA' THEN 'Tata'
+        
+        -- Marrakech-Safi Provinces
+        WHEN 'MARRAKECH' THEN 'Marrakech'
+        WHEN 'YOUSSOUFIA' THEN 'Youssoufia'
+        WHEN 'SAFI' THEN 'Safi'
+        WHEN 'ESSAOUIRA' THEN 'Essaouira'
+        WHEN 'KELAA DES SRAGHNA' THEN 'Rehamna'
+        
+        -- Béni Mellal-Khénifra Provinces
+        WHEN 'KHOURIBGA' THEN 'Khouribga'
+        WHEN 'CHP KHOURIBGA' THEN 'Khouribga'
+        WHEN 'BENI MELLAL' THEN 'Béni Mellal'
+        WHEN 'AZILAL' THEN 'Azilal'
+        WHEN 'KHENIFRA' THEN 'Khénifra'
+        WHEN 'FQUIH BEN SALAH' THEN 'Fquih Ben Salah'
+        
+        -- Oriental Provinces
+        WHEN 'OUJDA' THEN 'Oujda-Angad'
+        WHEN 'NADOR' THEN 'Nador'
+        WHEN 'BERKANE' THEN 'Berkane'
+        WHEN 'TAOURIRT' THEN 'Taourirt'
+        WHEN 'TAURIRT' THEN 'Taourirt'
+        WHEN 'JERADA' THEN 'Jerada'
+        WHEN 'FIGUIG' THEN 'Figuig'
+        
+        -- Drâa-Tafilalet Provinces
+        WHEN 'ERRACHIDIA' THEN 'Errachidia'
+        WHEN 'OUARZAZATE' THEN 'Ouarzazate'
+        WHEN 'TINGHIR' THEN 'Tinghir'
+        WHEN 'ZAGORA' THEN 'Zagora'
+        
+        -- Laâyoune-Sakia El Hamra Provinces
+        WHEN 'LAAYOUNE' THEN 'Laâyoune'
+        
+        -- Dakhla-Oued Ed-Dahab Provinces
+        WHEN 'DAKHLA' THEN 'Oued Ed-Dahab'
+        
+        -- Guelmim-Oued Noun Provinces
+        WHEN 'GUELMIM' THEN 'Guelmim'
+        WHEN 'TAN-TAN' THEN 'Tan-Tan'
+        WHEN 'SIDI IFNI' THEN 'Sidi Ifni'
+        WHEN 'ASSA-ZAG' THEN 'Assa-Zag'
+        WHEN 'TOULAL' THEN 'Guelmim'
+        
+        ELSE province
+    END
+WHERE region IS NULL OR region = 'NULL' OR province IS NULL OR province = 'NULL';
+
+-- ==========================================================
+-- STEP 3: REMOVE DUPLICATE CITIES
+-- ==========================================================
+-- Keep only one record per city (the one with the lowest ID)
+
+DELETE p1 FROM places p1
+INNER JOIN places p2 
+WHERE p1.city = p2.city 
+AND p1.id > p2.id;
+
+-- ==========================================================
+-- VERIFICATION
+-- ==========================================================
+SELECT 
+    'Total cities' as metric,
+    COUNT(DISTINCT city) as value
+FROM places
+UNION ALL
+SELECT 
+    'Rows with NULL region/province',
+    COUNT(*)
+FROM places
+WHERE region IS NULL OR region = 'NULL' OR province IS NULL OR province = 'NULL'
+UNION ALL
+SELECT 
+    'Total rows',
+    COUNT(*)
+FROM places;
+
+-- Show all unique cities with their regions
+SELECT DISTINCT
+    city,
+    region,
+    province
+FROM places
+ORDER BY city;
+-- ==========================================================
+-- DETECT AND REMOVE NON-CITY ENTRIES (STREETS, ADDRESSES)
+-- ==========================================================
+
+-- First, let's see what we're dealing with
+SELECT 
+    city,
+    CASE 
+        WHEN city LIKE '%RUE%' THEN 'Street address'
+        WHEN city LIKE '%AVENUE%' OR city LIKE '%AVE%' THEN 'Street address'
+        WHEN city LIKE '%BOULEVARD%' OR city LIKE '%BD%' OR city LIKE '%BLVD%' THEN 'Street address'
+        WHEN city LIKE '%PLACE%' THEN 'Street address'
+        WHEN city LIKE '%LOTISSEMENT%' THEN 'Development/District'
+        WHEN city LIKE '%QUARTIER%' THEN 'Neighborhood'
+        WHEN city LIKE '%ZONE%' THEN 'Zone/Area'
+        WHEN city LIKE '%N°%' OR city LIKE '%NUM%' THEN 'Has street number'
+        WHEN city LIKE '%[0-9]%' THEN 'Contains numbers'
+        WHEN city LIKE 'AIN %' AND city != 'AIN KADOUS FEZ' THEN 'Might be valid'
+        WHEN city LIKE 'SIDI %' AND city NOT IN ('SIDI KACEM', 'SIDI IFNI', 'SIDI SLIMANE') THEN 'Neighborhood'
+        ELSE 'Valid city'
+    END as category,
+    COUNT(*) as count
+FROM places
+GROUP BY city
+HAVING category != 'Valid city'
+ORDER BY category, city;
+
+-- ==========================================================
+-- DELETE NON-CITY ENTRIES
+-- ==========================================================
+
+-- Delete entries that are clearly street addresses
+DELETE FROM places
 WHERE 
-    p_bad.region IS NULL 
-    AND p_good.region IS NOT NULL
-    AND LEVENSHTEIN(p_bad.city, p_good.city) BETWEEN 1 AND 2;
+    -- Street indicators
+    city LIKE '%RUE %' OR
+    city LIKE '%AVENUE%' OR
+    city LIKE '%AVE %' OR
+    city LIKE '%BOULEVARD%' OR
+    city LIKE '%BD %' OR
+    city LIKE '%BLVD%' OR
+    city LIKE '%PLACE %' OR
+    
+    -- Development/Zone indicators
+    city LIKE '%LOTISSEMENT%' OR
+    city LIKE '%QUARTIER%' OR
+    city LIKE '%ZONE INDUSTRIELLE%' OR
+    city LIKE '%ZI %' OR
+    
+    -- Contains street numbers (like "87 RUE", "6 RUE")
+    city REGEXP '^[0-9]+ ' OR
+    city LIKE '%N°%' OR
+    city LIKE '%NUM%' OR
+    
+    -- Specific non-city patterns
+    city LIKE 'RUE %' OR
+    city LIKE '% RUE %' OR
+    
+    -- Empty or null cities
+    city IS NULL OR
+    city = '' OR
+    city = 'NULL';
 
+-- ==========================================================
+-- EXTRACT CITY FROM ADDRESS-LIKE ENTRIES
+-- ==========================================================
 
--- ========================================================
--- PART 3: THE "GARBAGE COLLECTOR" ALGORITHM
--- ========================================================
+-- For entries like "RUE IMAM ALI FES NOUVELLE" or "AIN KADOUS FEZ"
+-- Extract the actual city name at the end
 
--- 9. Delete "Container" Rows (Neighborhoods like "AIN KADOUS FEZ")
--- Logic: If a broken row *contains* the name of a valid city (like "FES") 
--- but is longer/messier, we delete it because the valid city already exists.
-DELETE p_garbage
-FROM places p_garbage
-JOIN places p_valid ON p_garbage.id != p_valid.id
+-- Strategy: If the city field contains a known city name, extract it
+
+UPDATE places
+SET city = CASE
+    -- Extract FES/FEZ
+    WHEN city LIKE '%FES%' OR city LIKE '%FEZ%' THEN 'FES'
+    
+    -- Extract CASABLANCA
+    WHEN city LIKE '%CASABLANCA%' THEN 'CASABLANCA'
+    
+    -- Extract RABAT
+    WHEN city LIKE '%RABAT%' THEN 'RABAT'
+    
+    -- Extract TANGER
+    WHEN city LIKE '%TANGER%' THEN 'TANGER'
+    
+    -- Extract MARRAKECH
+    WHEN city LIKE '%MARRAKECH%' THEN 'MARRAKECH'
+    
+    -- Extract AGADIR
+    WHEN city LIKE '%AGADIR%' THEN 'AGADIR'
+    
+    -- Extract OUJDA
+    WHEN city LIKE '%OUJDA%' THEN 'OUJDA'
+    
+    -- Extract KENITRA
+    WHEN city LIKE '%KENITRA%' OR city LIKE '%KÉNITRA%' THEN 'KENITRA'
+    
+    -- Extract SALE
+    WHEN city LIKE '%SALE%' OR city LIKE '%SALÉ%' THEN 'SALE'
+    
+    -- Extract MEKNES
+    WHEN city LIKE '%MEKNES%' OR city LIKE '%MEKNÈS%' THEN 'MEKNES'
+    
+    -- Extract TETOUAN
+    WHEN city LIKE '%TETOUAN%' OR city LIKE '%TÉTOUAN%' THEN 'TETOUAN'
+    
+    ELSE city
+END
 WHERE 
-    p_garbage.region IS NULL            -- The row is broken
-    AND p_valid.region IS NOT NULL      -- The match is a valid city
-    AND p_garbage.city LIKE CONCAT('%', p_valid.city, '%') -- Contains the valid name
-    AND LENGTH(p_garbage.city) > LENGTH(p_valid.city);     -- Is messier/longer
-
-
--- ========================================================
--- PART 4: FINAL DEDUPLICATION
--- ========================================================
-
--- 10. Smart Deduplication
--- Deletes duplicates, but prioritizes keeping the row with Data (Region/Province).
-DELETE p1
-FROM places p1
-INNER JOIN places p2 ON p1.city = p2.city
-WHERE 
-    p1.id != p2.id 
+    (city LIKE '%RUE%' OR city LIKE '%AVENUE%' OR city LIKE '%AIN%' OR city LIKE '%SIDI%')
     AND (
-        -- If p1 is empty and p2 is full, delete p1
-        (p1.region IS NULL AND p2.region IS NOT NULL)
-        OR 
-        -- If both are equal quality, delete the newer duplicate (higher ID)
-        ( (p1.region IS NULL) = (p2.region IS NULL) AND p1.id > p2.id )
+        city LIKE '%FES%' OR city LIKE '%FEZ%' OR
+        city LIKE '%CASABLANCA%' OR
+        city LIKE '%RABAT%' OR
+        city LIKE '%TANGER%' OR
+        city LIKE '%MARRAKECH%' OR
+        city LIKE '%AGADIR%' OR
+        city LIKE '%OUJDA%' OR
+        city LIKE '%KENITRA%' OR city LIKE '%KÉNITRA%' OR
+        city LIKE '%SALE%' OR city LIKE '%SALÉ%' OR
+        city LIKE '%MEKNES%' OR city LIKE '%MEKNÈS%' OR
+        city LIKE '%TETOUAN%' OR city LIKE '%TÉTOUAN%'
     );
 
+-- ==========================================================
+-- HANDLE SPECIFIC PROBLEMATIC ENTRIES
+-- ==========================================================
 
--- ========================================================
--- PART 5: VALIDATION
--- ========================================================
+-- Delete or fix specific entries that don't fit patterns
+DELETE FROM places
+WHERE city IN (
+    '87 RUE OMAR EL DRISSI',
+    '6 RUE KASEM AMINE',
+    'RUE ABDESSALAM SERGHINI',
+    'RUE MOHAMED ZARKTOUNI FEZ',
+    'RUE IMAM ALI FES NOUVELLE'
+);
 
--- 11. Final Check
-SELECT * FROM places ORDER BY city;
+-- Handle neighborhoods that should be removed
+DELETE FROM places
+WHERE 
+    city LIKE 'SIDI ALLAL%' OR
+    city LIKE 'AIT SKATOU%' OR
+    (city LIKE 'AIN %' AND city NOT IN ('AIN CHOCK', 'AIN SEBAA', 'AIN DIAB')) OR
+    city LIKE 'BENI ENSAR%' OR  -- This is a small town, but if you want to keep it, remove this line
+    city LIKE 'MIDAR%';  -- Small town in Oriental
 
--- 12. Alert: Show any remaining stubborn NULLs
-SELECT * FROM places WHERE region IS NULL;
--- ========================================================
--- PART 1: DATA CLEANING & STANDARDIZATION
--- ========================================================
+-- ==========================================================
+-- CLEAN UP: Remove duplicates after extraction
+-- ==========================================================
 
--- 1. Standardize Text (Uppercase & Trim)
--- Ensures consistent casing for names and addresses.
-UPDATE hospitals
-SET 
-    name = UPPER(TRIM(name)),
-    address = UPPER(TRIM(address)),
-    type = UPPER(TRIM(type)),
-    email = LOWER(TRIM(email)),   -- Emails are standard lowercase
-    website = LOWER(TRIM(website));
+DELETE p1 FROM places p1
+INNER JOIN places p2 
+WHERE p1.city = p2.city 
+AND p1.id > p2.id;
 
--- 2. Clean Addresses
--- Remove redundant "Maroc" or "Morocco" from the address string
-UPDATE hospitals
-SET address = TRIM(REPLACE(address, ' MAROC', ''));
-UPDATE hospitals
-SET address = TRIM(REPLACE(address, ', MOROCCO', ''));
+-- ==========================================================
+-- VERIFICATION
+-- ==========================================================
 
--- Remove 5-digit Zip Codes embedded in the address (e.g., "12200 LARACHE")
--- Regex: Finds a 5-digit number followed by a space and removes it.
-UPDATE hospitals
-SET address = REGEXP_REPLACE(address, '[0-9]{5} ', '');
+-- Count what's left
+SELECT 
+    'Total unique cities remaining' as metric,
+    COUNT(DISTINCT city) as value
+FROM places
+UNION ALL
+SELECT 
+    'Total rows',
+    COUNT(*)
+FROM places;
 
--- 3. Normalize Phone Numbers
--- Step A: Strip all characters that are NOT digits or '+'
-UPDATE hospitals
-SET phone = REGEXP_REPLACE(phone, '[^0-9+]', '')
-WHERE phone IS NOT NULL;
+-- Show cities that might still be problematic
+SELECT DISTINCT city
+FROM places
+WHERE 
+    city LIKE '% RUE %' OR
+    city LIKE '%AVENUE%' OR
+    city LIKE '%[0-9]%' OR
+    city LIKE 'RUE %' OR
+    city LIKE '%QUARTIER%' OR
+    LENGTH(city) > 30  -- Very long names might be addresses
+ORDER BY city;
 
--- Step B: Convert local '05'/'06' to International '+212'
--- Example: '0539861111' -> '+212539861111'
-UPDATE hospitals
-SET phone = CONCAT('+212', SUBSTRING(phone, 2))
-WHERE phone LIKE '05%' OR phone LIKE '06%';
-
--- Step C: Fix cases where '+' is missing but starts with 212
-UPDATE hospitals
-SET phone = CONCAT('+', phone)
-WHERE phone LIKE '212%';
-
--- 4. Fix "String NULLs"
--- Converts text string 'NULL' or empty strings to real SQL NULLs
-UPDATE hospitals SET email = NULL WHERE email = 'NULL' OR email = '';
-UPDATE hospitals SET website = NULL WHERE website = 'NULL' OR website = '';
-UPDATE hospitals SET phone = NULL WHERE phone = 'NULL' OR phone = '';
-UPDATE hospitals SET beds = NULL WHERE beds = 0; -- Optional: treat 0 beds as unknown/NULL
-
-
--- ========================================================
--- PART 2: DATA VALIDATION & CHECKS
--- ========================================================
-
--- 5. Check for Logical Duplicate Entries
--- Finds hospitals with the same name in the same place_id (City)
-SELECT name, place_id, COUNT(*) as duplicate_count
-FROM hospitals
-GROUP BY name, place_id
-HAVING COUNT(*) > 1;
-
--- 6. Validate "Type" Consistency
--- Lists all hospital types (HP, CHR, etc.) so you can spot typos (e.g., "H.P." vs "HP")
-SELECT type, COUNT(*) as count 
-FROM hospitals 
-GROUP BY type
-ORDER BY count DESC;
-
--- 7. Identify "Ghost" Hospitals (Missing Critical Info)
--- Flags hospitals that have NO phone and NO email (hard to contact)
-SELECT * FROM hospitals 
-WHERE phone IS NULL AND email IS NULL;
-
--- 8. Validate Email Format
--- Flags rows where email exists but looks wrong (missing '@' or '.')
-SELECT id, name, email 
-FROM hospitals 
-WHERE email IS NOT NULL 
-  AND email NOT REGEXP '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$';
-
--- 9. View Final Cleaned Data
-SELECT * FROM hospitals LIMIT 50;
+-- Show final clean list
+SELECT DISTINCT 
+    city,
+    region,
+    province,
+    COUNT(*) as occurrence_count
+FROM places
+GROUP BY city, region, province
+ORDER BY city;
