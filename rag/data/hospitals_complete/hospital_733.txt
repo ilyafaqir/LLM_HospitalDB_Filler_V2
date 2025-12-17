@@ -1,0 +1,68 @@
+======================================================================
+HÔPITAL: Croissant Rouge
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 733
+Type d'établissement: HÔPITAL
+Nombre de lits: 50
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Tanger-Tétouan-Al Hoceïma
+Province: Tanger-Assilah
+Ville: TANGER
+Adresse: Tanger
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (5 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Oncologie
+  Description: Diagnostic et traitement des cancers et tumeurs.
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• Psychiatrie
+  Description: Prise en charge des troubles mentaux et psychologiques.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 5 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 5 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 5 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 2 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 3 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 5 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 5 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 3 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 3 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 1 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 50 lits offre 5 services médicaux et possède 37 équipements médicaux.

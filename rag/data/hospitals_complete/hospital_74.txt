@@ -1,0 +1,108 @@
+======================================================================
+HÔPITAL: El Ayachi
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 74
+Type d'établissement: HIR
+Nombre de lits: 300
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Rabat-Salé-Kénitra
+Province: Salé
+Ville: BAB LAMRISSA ARROND
+Adresse: Bab Lamrissa, Rabat
+
+--- CONTACT ---
+Téléphone: 537733131
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (18 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Imagerie Médicale
+  Description: Service d'imagerie médicale et radiologie diagnostique.
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Réanimation
+  Description: Soins intensifs
+
+• Oncologie
+  Description: Diagnostic et traitement des cancers et tumeurs.
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Urologie
+  Description: Diagnostic et traitement des pathologies urinaires et génitales.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 5 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 5 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 3 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 4 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 2 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 3 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 5 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 1 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 3 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 3 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HIR dispose de 300 lits offre 18 services médicaux et possède 34 équipements médicaux.

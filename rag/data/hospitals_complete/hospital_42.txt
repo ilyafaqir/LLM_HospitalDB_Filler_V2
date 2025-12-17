@@ -1,0 +1,47 @@
+======================================================================
+HÔPITAL: Pagnon
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 42
+Type d'établissement: HP
+Nombre de lits: 250
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Fès-Meknès
+Province: Meknes
+Ville: MEKNÈS MUN
+Adresse: Boulevard Pagnon, Meknès 50000
+
+--- CONTACT ---
+Téléphone: 535632222
+Email: hospitalempagnon@gmail.com
+Site web: https://www.hospitalempagnon.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (1 services)
+======================================================================
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (4 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Échographe (Code: EQ-US)
+  Quantité: 2 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 3 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HP dispose de 250 lits offre 1 services médicaux et possède 13 équipements médicaux.

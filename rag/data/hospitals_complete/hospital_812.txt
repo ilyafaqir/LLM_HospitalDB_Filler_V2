@@ -1,0 +1,44 @@
+======================================================================
+HÔPITAL: dispensaire مستوصف
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 812
+Type d'établissement: HÔPITAL
+Nombre de lits: 30
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Oncologie
+  Description: Diagnostic et traitement des cancers et tumeurs.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (3 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Échographe (Code: EQ-US)
+  Quantité: 2 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 3 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 5 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 30 lits offre 3 services médicaux et possède 10 équipements médicaux.

@@ -1,0 +1,46 @@
+======================================================================
+HÔPITAL: Hôpital Essaada
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 587
+Type d'établissement: HÔPITAL
+Nombre de lits: 1000
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Boulevard Sidi Mohammed Ben Abdallah, 40000 Marrakech
+
+--- CONTACT ---
+Téléphone: 524433131
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (3 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• IRM (Code: EQ-MRI)
+  Quantité: 5 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 2 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 5 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 1000 lits offre 3 services médicaux et possède 12 équipements médicaux.

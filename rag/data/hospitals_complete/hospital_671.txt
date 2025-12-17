@@ -1,0 +1,92 @@
+======================================================================
+HÔPITAL: Hopital Provincial Taourirt
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 671
+Type d'établissement: HÔPITAL
+Nombre de lits: 250
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Oriental
+Province: Taourirt
+Ville: TAURIRT
+Adresse: Route de la ville, 46160 Taourirt
+
+--- CONTACT ---
+Téléphone: 535832314
+Email: hopitaltaourirt@maroc.org
+Site web: https://www.hopitaltaourirt.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (12 services)
+======================================================================
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Oncologie
+  Description: Diagnostic et traitement des cancers et tumeurs.
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 1 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 1 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 1 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 1 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 1 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 5 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 1 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 3 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 1 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 250 lits offre 12 services médicaux et possède 20 équipements médicaux.

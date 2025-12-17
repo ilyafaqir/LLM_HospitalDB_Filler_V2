@@ -1,0 +1,53 @@
+======================================================================
+HÔPITAL: CENTRE DE SANTE
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 833
+Type d'établissement: HÔPITAL
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Souss-Massa
+Province: Agadir-Ida-Ou-Tanane
+Ville: DRARGA
+Adresse: Route de Drarga, Drarga
+
+--- CONTACT ---
+Téléphone: 611223344
+Email: centredesante.drarga@hopitaux-marocains.ma
+Site web: https://www.centredesante.drarga.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Réanimation
+  Description: Soins intensifs
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Psychiatrie
+  Description: Prise en charge des troubles mentaux et psychologiques.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (4 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 4 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 1 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 1 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 2 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 150 lits offre 3 services médicaux et possède 8 équipements médicaux.

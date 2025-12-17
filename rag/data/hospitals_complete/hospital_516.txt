@@ -1,0 +1,78 @@
+======================================================================
+HÔPITAL: Hôpital Privé de Casablanca Aîn Sebaâ
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 516
+Type d'établissement: CLINIQUE
+Nombre de lits: 300
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Avenue de l'Armée Royale, Ain Sebaa, Casablanca
+
+--- CONTACT ---
+Téléphone: 522434343
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (9 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Psychiatrie
+  Description: Prise en charge des troubles mentaux et psychologiques.
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 4 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 4 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 2 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 1 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 2 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 3 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 3 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 3 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type CLINIQUE dispose de 300 lits offre 9 services médicaux et possède 30 équipements médicaux.

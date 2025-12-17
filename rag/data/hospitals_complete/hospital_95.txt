@@ -1,0 +1,47 @@
+======================================================================
+HÔPITAL: Errazi
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 95
+Type d'établissement: HPSYP
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Casablanca-Settat
+Province: Berrechid
+Ville: BERRECHID MUN
+Adresse: Route de Casablanca, Berrechid
+
+--- CONTACT ---
+Email: info@hosperrazi.ma
+Site web: https://www.hosperrazi.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (2 services)
+======================================================================
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (3 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 1 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 4 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 1 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HPSYP dispose de 150 lits offre 2 services médicaux et possède 6 équipements médicaux.

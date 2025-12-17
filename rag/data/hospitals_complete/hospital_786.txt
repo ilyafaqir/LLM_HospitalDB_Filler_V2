@@ -1,0 +1,79 @@
+======================================================================
+HÔPITAL: Clinic El Menzah
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 786
+Type d'établissement: HÔPITAL
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Fès-Meknès
+Province: Meknès
+Ville: MEKNES
+Adresse: Boulevard Mohammed VI, Meknès 50000
+
+--- CONTACT ---
+Email: info@clinicelmenzah.ma
+Site web: https://clinicelmenzah.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (8 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 2 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 3 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 4 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 1 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 4 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 5 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 4 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 3 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 1 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 150 lits offre 8 services médicaux et possède 31 équipements médicaux.

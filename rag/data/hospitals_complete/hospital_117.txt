@@ -1,0 +1,74 @@
+======================================================================
+HÔPITAL: HPr Sidi Moumen
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 117
+Type d'établissement: HPR
+Nombre de lits: 500
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Casablanca-Settat
+Province: Sidi Bernoussi
+Ville: SIDI MOUMEN ARROND
+Adresse: Route de Casablanca, Sidi Moumen, Casablanca-Settat
+
+--- CONTACT ---
+Téléphone: 522232323
+Email: hpsidimoumen@hopitaux.gov.ma
+Site web: https://www.hopitaux.gov.ma/hopitaux/hpr-sidi-moumen
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (6 services)
+======================================================================
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Psychiatrie
+  Description: Prise en charge des troubles mentaux et psychologiques.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 5 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 2 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 3 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 2 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 4 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 5 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 2 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 4 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 3 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HPR dispose de 500 lits offre 6 services médicaux et possède 34 équipements médicaux.

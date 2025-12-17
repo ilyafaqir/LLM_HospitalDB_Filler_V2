@@ -1,0 +1,48 @@
+======================================================================
+HÔPITAL: مصحة المبادرة
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 408
+Type d'établissement: CLINIQUE
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: الدار البيضاء
+
+--- CONTACT ---
+Téléphone: 522792345
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Psychiatrie
+  Description: Prise en charge des troubles mentaux et psychologiques.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (4 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• IRM (Code: EQ-MRI)
+  Quantité: 2 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 5 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 5 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 3 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type CLINIQUE dispose de 150 lits offre 3 services médicaux et possède 15 équipements médicaux.

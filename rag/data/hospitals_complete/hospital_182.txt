@@ -1,0 +1,82 @@
+======================================================================
+HÔPITAL: Oued.Zem
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 182
+Type d'établissement: HPR
+Nombre de lits: 250
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Route de Sidi Slimane, 14000 Khouribga
+
+--- CONTACT ---
+Email: ouedzem@hopitaux.gov.ma
+Site web: https://www.hopitaux.gov.ma/ouedzem
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (10 services)
+======================================================================
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Réanimation
+  Description: Soins intensifs
+
+• Oncologie
+  Description: Diagnostic et traitement des cancers et tumeurs.
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Psychiatrie
+  Description: Prise en charge des troubles mentaux et psychologiques.
+
+• Urologie
+  Description: Diagnostic et traitement des pathologies urinaires et génitales.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 5 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 4 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 1 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 5 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 4 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 5 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 1 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 1 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 5 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HPR dispose de 250 lits offre 10 services médicaux et possède 35 équipements médicaux.

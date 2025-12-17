@@ -1,0 +1,99 @@
+======================================================================
+HÔPITAL: Centre de Santé Said Noussairi
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 504
+Type d'établissement: HÔPITAL
+Nombre de lits: 500
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Tanger-Tétouan-Al Hoceïma
+Province: Tanger-Assilah
+Ville: TANGER
+Adresse: Rue Said Noussairi, Tanger
+
+--- CONTACT ---
+Téléphone: 663613242
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (15 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Oncologie
+  Description: Diagnostic et traitement des cancers et tumeurs.
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Psychiatrie
+  Description: Prise en charge des troubles mentaux et psychologiques.
+
+• Urologie
+  Description: Diagnostic et traitement des pathologies urinaires et génitales.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 1 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 2 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 3 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 1 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 2 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 3 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 3 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 2 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 1 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 500 lits offre 15 services médicaux et possède 23 équipements médicaux.

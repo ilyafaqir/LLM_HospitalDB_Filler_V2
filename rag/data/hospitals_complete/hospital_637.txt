@@ -1,0 +1,105 @@
+======================================================================
+HÔPITAL: L'Hôpital de Saïdia مستشفى السعيدية
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 637
+Type d'établissement: HÔPITAL
+Nombre de lits: 200
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Route de la plage, 66000 Saïdia
+
+--- CONTACT ---
+Téléphone: 98832211
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (18 services)
+======================================================================
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Imagerie Médicale
+  Description: Service d'imagerie médicale et radiologie diagnostique.
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Réanimation
+  Description: Soins intensifs
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Psychiatrie
+  Description: Prise en charge des troubles mentaux et psychologiques.
+
+• Urologie
+  Description: Diagnostic et traitement des pathologies urinaires et génitales.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 2 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 5 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 1 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 2 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 4 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 2 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 2 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 5 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 1 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 3 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 200 lits offre 18 services médicaux et possède 27 équipements médicaux.

@@ -1,0 +1,45 @@
+======================================================================
+HÔPITAL: Clinique Doukkala
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 590
+Type d'établissement: HÔPITAL
+Nombre de lits: 55
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Route de Safi, 40000 El Jadida
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Réanimation
+  Description: Soins intensifs
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (3 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 5 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 2 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 55 lits offre 3 services médicaux et possède 11 équipements médicaux.

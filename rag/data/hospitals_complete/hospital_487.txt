@@ -1,0 +1,57 @@
+======================================================================
+HÔPITAL: Centre de Santé Urbain المركز الصحي الحضري
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 487
+Type d'établissement: HÔPITAL
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Tanger-Tétouan-Al Hoceïma
+Province: Ouezzane
+Ville: OUAZZANE
+Adresse: Route de Meknès, Ouazzane
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (4 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Oncologie
+  Description: Diagnostic et traitement des cancers et tumeurs.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (6 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 5 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 3 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 3 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 5 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 2 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 150 lits offre 4 services médicaux et possède 23 équipements médicaux.

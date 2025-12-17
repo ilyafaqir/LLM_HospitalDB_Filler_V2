@@ -1,0 +1,70 @@
+======================================================================
+HÔPITAL: Infirmary
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 396
+Type d'établissement: HÔPITAL
+Nombre de lits: 70
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (7 services)
+======================================================================
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Imagerie Médicale
+  Description: Service d'imagerie médicale et radiologie diagnostique.
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Réanimation
+  Description: Soins intensifs
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 4 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 1 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 1 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 1 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 3 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 2 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 2 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 3 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 4 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 70 lits offre 7 services médicaux et possède 25 équipements médicaux.

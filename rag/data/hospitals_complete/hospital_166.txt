@@ -1,0 +1,84 @@
+======================================================================
+HÔPITAL: Es-Smara
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 166
+Type d'établissement: HP
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Laayoune-Sakia El Hamra
+Province: Es Semara
+Ville: ES-SEMARA MUN
+Adresse: Route de l'aéroport, Es-Semara, Province de Dakhla-Oued Ed-Dahab
+
+--- CONTACT ---
+Téléphone: 528832334
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (10 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Psychiatrie
+  Description: Prise en charge des troubles mentaux et psychologiques.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 4 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 2 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 2 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 3 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 4 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 4 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 5 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 4 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 3 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 2 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HP dispose de 150 lits offre 10 services médicaux et possède 33 équipements médicaux.

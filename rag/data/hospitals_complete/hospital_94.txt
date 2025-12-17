@@ -1,0 +1,46 @@
+======================================================================
+HÔPITAL: Berrchid
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 94
+Type d'établissement: HP
+Nombre de lits: 250
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Casablanca-Settat
+Province: Berrechid
+Ville: BERRECHID MUN
+Adresse: Route de Casablanca, 22200 Berrechid
+
+--- CONTACT ---
+Téléphone: 523932334
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (2 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (3 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 1 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 1 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HP dispose de 250 lits offre 2 services médicaux et possède 6 équipements médicaux.

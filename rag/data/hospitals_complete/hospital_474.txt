@@ -1,0 +1,45 @@
+======================================================================
+HÔPITAL: infirmerie
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 474
+Type d'établissement: HÔPITAL
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Route de la ville, 48400 Youssoufia
+
+--- CONTACT ---
+Téléphone: 670056227
+Email: infirmerie.youssoufia@hopitaux-marocains.ma
+Site web: https://www.hopitaux-marocains.ma/infirmerie-youssoufia
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (2 services)
+======================================================================
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (3 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 1 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 3 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 150 lits offre 2 services médicaux et possède 8 équipements médicaux.

@@ -1,0 +1,62 @@
+======================================================================
+HÔPITAL: Hemodialysis center Ait-Melloul
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 719
+Type d'établissement: HÔPITAL
+Nombre de lits: 80
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Souss-Massa
+Province: Inezgane-Aït Melloul
+Ville: AÏT MELLOUL
+Adresse: Route de Marrakech, Aït Melloul
+
+--- CONTACT ---
+Téléphone: 525472222
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (4 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (8 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 4 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 1 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 2 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 3 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 5 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 5 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 80 lits offre 4 services médicaux et possède 29 équipements médicaux.

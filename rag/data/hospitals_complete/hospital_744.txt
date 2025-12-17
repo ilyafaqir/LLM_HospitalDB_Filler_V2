@@ -1,0 +1,78 @@
+======================================================================
+HÔPITAL: Clinique Toubkal
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 744
+Type d'établissement: HÔPITAL
+Nombre de lits: 80
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Talâa Sghir, Marrakech 40000
+
+--- CONTACT ---
+Téléphone: 524373333
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (9 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Imagerie Médicale
+  Description: Service d'imagerie médicale et radiologie diagnostique.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 5 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 2 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 4 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 5 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 4 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 3 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 4 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 3 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 5 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 80 lits offre 9 services médicaux et possède 39 équipements médicaux.

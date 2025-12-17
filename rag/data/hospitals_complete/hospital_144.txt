@@ -1,0 +1,80 @@
+======================================================================
+HÔPITAL: Midelt
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 144
+Type d'établissement: HP
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Drâa-Tafilalet
+Province: Midelt
+Ville: MIDELT MUN
+Adresse: Route de Meknès, 54200 Midelt
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (9 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Imagerie Médicale
+  Description: Service d'imagerie médicale et radiologie diagnostique.
+
+• Réanimation
+  Description: Soins intensifs
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 4 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 1 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 5 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 5 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 4 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 2 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 3 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 1 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 4 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HP dispose de 150 lits offre 9 services médicaux et possède 33 équipements médicaux.

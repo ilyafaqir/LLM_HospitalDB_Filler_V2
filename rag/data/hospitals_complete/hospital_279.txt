@@ -1,0 +1,58 @@
+======================================================================
+HÔPITAL: Oulad Teima
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 279
+Type d'établissement: HPR
+Nombre de lits: 250
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Route de Tanger, 23000 Oulad Teïma
+
+--- CONTACT ---
+Téléphone: 585832345
+Email: hospitauladteima@maroc.hc
+Site web: https://www.hospitauladteima.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (5 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Réanimation
+  Description: Soins intensifs
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (5 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Échographe (Code: EQ-US)
+  Quantité: 5 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 5 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 5 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 1 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HPR dispose de 250 lits offre 5 services médicaux et possède 20 équipements médicaux.

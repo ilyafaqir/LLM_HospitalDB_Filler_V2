@@ -1,0 +1,90 @@
+======================================================================
+HÔPITAL: Hôpital Mère-Enfant
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 52
+Type d'établissement: HIR
+Nombre de lits: 300
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Fès-Meknès
+Province: Fes
+Ville: SAISS ARROND
+Adresse: Route de Meknès, 52000 Saïss
+
+--- CONTACT ---
+Téléphone: 535660000
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (12 services)
+======================================================================
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Réanimation
+  Description: Soins intensifs
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 3 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 4 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 3 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 1 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 2 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 1 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 5 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 4 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 3 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HIR dispose de 300 lits offre 12 services médicaux et possède 31 équipements médicaux.

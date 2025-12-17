@@ -1,0 +1,44 @@
+======================================================================
+HÔPITAL: dispensaire
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 345
+Type d'établissement: HÔPITAL
+Nombre de lits: 20
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (3 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 1 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 2 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 3 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 20 lits offre 3 services médicaux et possède 6 équipements médicaux.

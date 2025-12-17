@@ -1,0 +1,49 @@
+======================================================================
+HÔPITAL: maison d'accochement
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 513
+Type d'établissement: HÔPITAL
+Nombre de lits: 40
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Souss-Massa
+Province: Agadir-Ida-Ou-Tanane
+Ville: DRARGA
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Urologie
+  Description: Diagnostic et traitement des pathologies urinaires et génitales.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (4 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 3 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 3 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 1 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 3 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 40 lits offre 3 services médicaux et possède 10 équipements médicaux.

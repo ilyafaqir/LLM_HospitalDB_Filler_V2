@@ -1,0 +1,75 @@
+======================================================================
+HÔPITAL: 20 Aout (Azrou)
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 227
+Type d'établissement: HP
+Nombre de lits: 300
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Route de Taza, Azrou, Fès-Meknès
+
+--- CONTACT ---
+Téléphone: 535784444
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (8 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Réanimation
+  Description: Soins intensifs
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 2 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 3 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 4 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 1 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 3 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 5 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 5 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 3 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 1 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HP dispose de 300 lits offre 8 services médicaux et possède 32 équipements médicaux.

@@ -1,0 +1,98 @@
+======================================================================
+HÔPITAL: Polyclinique du Sud
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 599
+Type d'établissement: HÔPITAL
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Boulevard Mohammed VI, 40000 Marrakech
+
+--- CONTACT ---
+Téléphone: 524434343
+Email: info@polycliniquedusud.ma
+Site web: https://www.polycliniquedusud.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (15 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Imagerie Médicale
+  Description: Service d'imagerie médicale et radiologie diagnostique.
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Réanimation
+  Description: Soins intensifs
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Urologie
+  Description: Diagnostic et traitement des pathologies urinaires et génitales.
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 2 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 2 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 5 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 4 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 2 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 2 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 3 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 3 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 5 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 150 lits offre 15 services médicaux et possède 33 équipements médicaux.

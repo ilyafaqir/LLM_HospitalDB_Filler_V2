@@ -1,0 +1,83 @@
+======================================================================
+HÔPITAL: La Symphony Dental Centre
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 503
+Type d'établissement: HÔPITAL
+Nombre de lits: 400
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Rue de la Liberté, Tanger
+
+--- CONTACT ---
+Téléphone: 539933333
+Email: info@lasymphonydentalcentre.com
+Site web: https://lasymphonydental.com/
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (10 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Imagerie Médicale
+  Description: Service d'imagerie médicale et radiologie diagnostique.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+• Psychiatrie
+  Description: Prise en charge des troubles mentaux et psychologiques.
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 2 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 3 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 3 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 4 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 5 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 3 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 4 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 1 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 400 lits offre 10 services médicaux et possède 33 équipements médicaux.

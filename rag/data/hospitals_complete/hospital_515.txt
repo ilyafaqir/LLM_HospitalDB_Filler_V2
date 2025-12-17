@@ -1,0 +1,67 @@
+======================================================================
+HÔPITAL: centre sante fom oued
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 515
+Type d'établissement: HÔPITAL
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Rabat-Salé-Kénitra
+Province: Khémisset
+Ville: SIDI ALI BELKACEM
+Adresse: Oued Sidi Ali Belkacem
+
+--- CONTACT ---
+Téléphone: 611223344
+Email: centre.sante.fom.oued@gmail.com
+Site web: https://centresante.fom.oued.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (5 services)
+======================================================================
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Urologie
+  Description: Diagnostic et traitement des pathologies urinaires et génitales.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (8 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 1 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 1 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 5 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 3 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 3 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 2 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 3 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 3 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 150 lits offre 5 services médicaux et possède 21 équipements médicaux.

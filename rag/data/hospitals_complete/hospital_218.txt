@@ -1,0 +1,57 @@
+======================================================================
+HÔPITAL: Marche Verte
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 218
+Type d'établissement: HP
+Nombre de lits: 60
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (4 services)
+======================================================================
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Dermatologie
+  Description: Diagnostic et traitement des maladies de la peau.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (8 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• IRM (Code: EQ-MRI)
+  Quantité: 5 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 3 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 5 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 4 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 3 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 2 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 3 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 3 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HP dispose de 60 lits offre 4 services médicaux et possède 28 équipements médicaux.

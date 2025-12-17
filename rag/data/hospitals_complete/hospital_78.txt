@@ -1,0 +1,85 @@
+======================================================================
+HÔPITAL: Sidi Kacem
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 78
+Type d'établissement: HP
+Nombre de lits: 400
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Rabat-Salé-Kénitra
+Province: Sidi Kacem
+Ville: SIDI KACEM MUN
+Adresse: Route de Meknès, Sidi Kacem 16300
+
+--- CONTACT ---
+Email: hospitalsec@hospitalsidi-kacem.ma
+Site web: https://hospitalsidi-kacem.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (10 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Urologie
+  Description: Diagnostic et traitement des pathologies urinaires et génitales.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 5 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 2 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 3 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 3 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 2 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 2 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 2 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 2 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 2 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HP dispose de 400 lits offre 10 services médicaux et possède 28 équipements médicaux.

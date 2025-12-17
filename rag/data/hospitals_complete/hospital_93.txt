@@ -1,0 +1,59 @@
+======================================================================
+HÔPITAL: Benslimane (Hassan II)
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 93
+Type d'établissement: HP
+Nombre de lits: 300
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Casablanca-Settat
+Province: Benslimane
+Ville: BENSLIMANE MUN
+Adresse: Route de Casablanca, Benslimane
+
+--- CONTACT ---
+Téléphone: 525531200
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (5 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Urologie
+  Description: Diagnostic et traitement des pathologies urinaires et génitales.
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (5 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Échographe (Code: EQ-US)
+  Quantité: 4 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 1 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 2 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 5 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HP dispose de 300 lits offre 5 services médicaux et possède 16 équipements médicaux.

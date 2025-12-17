@@ -1,0 +1,68 @@
+======================================================================
+HÔPITAL: C. d'oncologie d'Al Hoceima
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 283
+Type d'établissement: CRO
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Route de Targuist, 32000 Al Hoceima
+
+--- CONTACT ---
+Téléphone: 539832334
+Email: cdo.alhoceima@hopitaux.gov.ma
+Site web: https://hopitaux.gov.ma/cdo-alhoceima
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (5 services)
+======================================================================
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Psychiatrie
+  Description: Prise en charge des troubles mentaux et psychologiques.
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 1 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 2 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 5 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 3 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 2 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 2 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 2 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 1 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 2 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type CRO dispose de 150 lits offre 5 services médicaux et possède 25 équipements médicaux.

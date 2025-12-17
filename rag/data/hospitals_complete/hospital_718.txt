@@ -1,0 +1,84 @@
+======================================================================
+HÔPITAL: Clinique al-Massira
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 718
+Type d'établissement: HÔPITAL
+Nombre de lits: 180
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Route de l'aéroport, Agadir 80000
+
+--- CONTACT ---
+Téléphone: 528833131
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (11 services)
+======================================================================
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Neurologie
+  Description: Diagnostic et traitement des maladies du système nerveux.
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Chirurgie Générale
+  Description: Service de chirurgie générale et interventions chirurgicales.
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Réanimation
+  Description: Soins intensifs
+
+• Oncologie
+  Description: Diagnostic et traitement des cancers et tumeurs.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Urologie
+  Description: Diagnostic et traitement des pathologies urinaires et génitales.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 5 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 2 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 5 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 2 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 3 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 1 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 2 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 4 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 5 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 180 lits offre 11 services médicaux et possède 33 équipements médicaux.

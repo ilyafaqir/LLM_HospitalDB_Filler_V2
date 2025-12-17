@@ -1,0 +1,46 @@
+======================================================================
+HÔPITAL: Centre de santé
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 544
+Type d'établissement: HÔPITAL
+Nombre de lits: 40
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (4 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 2 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 5 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 1 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 40 lits offre 3 services médicaux et possède 12 équipements médicaux.

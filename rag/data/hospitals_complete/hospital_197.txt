@@ -1,0 +1,52 @@
+======================================================================
+HÔPITAL: Tit Mellil
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 197
+Type d'établissement: HPSYP
+Nombre de lits: 250
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Route de Rabat, 27600 Tit Mellil
+
+--- CONTACT ---
+Téléphone: 523932334
+Email: hospital.titmellil@maroc.com
+Site web: https://www.hopital-titmellil.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Réanimation
+  Description: Soins intensifs
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (5 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 1 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 2 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 3 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 2 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HPSYP dispose de 250 lits offre 3 services médicaux et possède 12 équipements médicaux.

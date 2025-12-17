@@ -1,0 +1,83 @@
+======================================================================
+HÔPITAL: ATLANTIC CLINIC CASABLANCA
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 746
+Type d'établissement: HÔPITAL
+Nombre de lits: 100
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Boulevard de la Corniche, Casablanca
+
+--- CONTACT ---
+Téléphone: 522989898
+Email: info@atlanticclinic.ma
+Site web: https://www.atlanticclinic.ma/
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (10 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Imagerie Médicale
+  Description: Service d'imagerie médicale et radiologie diagnostique.
+
+• Réanimation
+  Description: Soins intensifs
+
+• Oncologie
+  Description: Diagnostic et traitement des cancers et tumeurs.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 3 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 4 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 4 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 4 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 3 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 3 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 5 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 1 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 3 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 100 lits offre 10 services médicaux et possède 35 équipements médicaux.

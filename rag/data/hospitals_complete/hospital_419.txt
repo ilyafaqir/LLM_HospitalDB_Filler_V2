@@ -1,0 +1,51 @@
+======================================================================
+HÔPITAL: Dr Badaoui ABDELLATIF Ophtalmo
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 419
+Type d'établissement: CLINIQUE
+Nombre de lits: 40
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (4 services)
+======================================================================
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (5 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 5 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 1 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 5 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 2 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type CLINIQUE dispose de 40 lits offre 4 services médicaux et possède 18 équipements médicaux.

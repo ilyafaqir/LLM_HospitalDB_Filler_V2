@@ -1,0 +1,43 @@
+======================================================================
+HÔPITAL: Tit Mellil
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 99
+Type d'établissement: HPSYP
+Nombre de lits: 250
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Casablanca-Settat
+Province: Mediouna
+Ville: SIDI HAJJAJ OUED HASSAR
+Adresse: Route de Sidi Hajjaj, 20620 Sidi Hajjaj
+
+--- CONTACT ---
+Email: titmellil@hopitaux.gov.ma
+Site web: https://www.hopitaux.gov.ma/tit-mellil
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (2 services)
+======================================================================
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (1 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 2 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HPSYP dispose de 250 lits offre 2 services médicaux et possède 2 équipements médicaux.

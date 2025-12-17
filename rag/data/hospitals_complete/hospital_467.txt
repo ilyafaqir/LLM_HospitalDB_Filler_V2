@@ -1,0 +1,25 @@
+======================================================================
+HÔPITAL: Parmacie Ichbilya
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 467
+Type d'établissement: HÔPITAL
+Nombre de lits: 0
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+
+--- CONTACT ---
+
+
+--- SERVICES MÉDICAUX ---
+Aucun service enregistré
+
+--- ÉQUIPEMENTS MÉDICAUX ---
+Aucun équipement enregistré
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 0 lits.

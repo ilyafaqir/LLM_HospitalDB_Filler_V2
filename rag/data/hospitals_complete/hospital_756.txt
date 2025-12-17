@@ -1,0 +1,71 @@
+======================================================================
+HÔPITAL: Clinique Tilila
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 756
+Type d'établissement: HÔPITAL
+Nombre de lits: 150
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Route de l'usine, 20000 Casablanca
+
+--- CONTACT ---
+Téléphone: 522334455
+Email: cliniquetilila@gmail.com
+Site web: https://cliniquetilila.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (6 services)
+======================================================================
+
+• Pharmacie Hospitalière
+  Description: Dispensation de médicaments et conseil pharmaceutique.
+
+• Réanimation
+  Description: Soins intensifs
+
+• Oncologie
+  Description: Diagnostic et traitement des cancers et tumeurs.
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (10 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 3 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 5 unité(s)
+• Échographe (Code: EQ-US)
+  Quantité: 1 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 4 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 3 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 4 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 4 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 150 lits offre 6 services médicaux et possède 37 équipements médicaux.

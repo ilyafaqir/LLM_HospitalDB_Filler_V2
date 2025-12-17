@@ -1,0 +1,49 @@
+======================================================================
+HÔPITAL: Prince My Hassan
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 47
+Type d'établissement: HP
+Nombre de lits: 200
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Fès-Meknès
+Province: El Hajeb
+Ville: EL HAJEB MUN
+Adresse: Route de Meknès, El Hajeb
+
+--- CONTACT ---
+Téléphone: 669823456
+Email: prince.my.hassan@hopital.ma
+Site web: https://hopitalprincemyhassan.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Laboratoire d'Analyses
+  Description: Laboratoire d'analyses biologiques et tests diagnostiques.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (2 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• IRM (Code: EQ-MRI)
+  Quantité: 4 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 1 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HP dispose de 200 lits offre 3 services médicaux et possède 5 équipements médicaux.

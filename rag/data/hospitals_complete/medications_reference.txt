@@ -1,0 +1,201 @@
+======================================================================
+LISTE DES MÉDICAMENTS DISPONIBLES
+======================================================================
+
+• ACULAR
+  Substance active: KETOROLAC TROMETHAMINE
+  Dosage: 0005
+  Forme: COLLYRE
+  Présentation: FLACON DE 5 ML
+  Classe thérapeutique: OPHTALMOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 3630.0 DH
+  Prix hospitalier: 2270.0 DH
+  Statut: Non Commercialisé
+
+• ACUVAIL
+  Substance active: KETOROLAC TROMETHAMINE
+  Dosage: 00045
+  Forme: COLLYRE EN SOLUTION
+  Présentation: BOITE DE 30 RECIPIENTS UNIDOSE DE 0,4 ML
+  Classe thérapeutique: OPHTALMOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 12750.0 DH
+  Prix hospitalier: 7970.0 DH
+  Statut: Non Commercialisé
+
+• AERRANE
+  Substance active: ISOFLURANE
+  Dosage: 1
+  Forme: LIQUIDE POUR INHALATION
+  Présentation: FLACON DE 100 ML
+  Classe thérapeutique: ANESTHESIOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 33800.0 DH
+  Prix hospitalier: 22500.0 DH
+  Statut: Non Commercialisé
+
+• ALGIK
+  Substance active: PARACETAMOL // CAFEINE
+  Dosage: 500 MG / 50 MG
+  Forme: COMPRIME
+  Présentation: BOITE DE 16
+  Classe thérapeutique: ANTALGIQUES
+  Fabricant: AFRIC PHAR
+  Prix public: 1240.0 DH
+  Prix hospitalier: 770.0 DH
+  Statut: Commercialisé
+
+• ALPHAGAN
+  Substance active: BRIMONIDINE (TARTRATE)
+  Dosage: 0002
+  Forme: COLLYRE
+  Présentation: FLACON DE 5 ML
+  Classe thérapeutique: OPHTALMOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 8550.0 DH
+  Prix hospitalier: 5340.0 DH
+  Statut: Commercialisé
+
+• AMOXICILLINE LLORENTE
+  Substance active: AMOXICILLINE
+  Dosage: 250 MG
+  Forme: POUDRE POUR SUSPENTION BUVABLE
+  Présentation: FLACON DE 60 ML
+  Classe thérapeutique: INFECTIOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 2280.0 DH
+  Prix hospitalier: 1430.0 DH
+  Statut: Commercialisé AO
+
+• AMPICILLINE LLORENTE
+  Substance active: AMPICILLINE
+  Dosage: 250 MG
+  Forme: POUDRE POUR SUSPENTION BUVABLE
+  Présentation: FLACON DE 60 ML
+  Classe thérapeutique: INFECTIOLOGIE-PARASITOLOGIE-IMMUNOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 2450.0 DH
+  Prix hospitalier: 1530.0 DH
+  Statut: Retiré du Marché
+
+• BELMAZOL
+  Substance active: OMEPRAZOLE
+  Dosage: 20 MG
+  Forme: GELULE
+  Présentation: BOITE DE 14
+  Classe thérapeutique: GASTRO-ENTEROLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 4580.0 DH
+  Prix hospitalier: 2860.0 DH
+  Statut: Commercialisé
+
+• BEMAG
+  Substance active: MAGNESIUM (GLYCEROPHOSPHATE) // PYRIDOXINE (CHLORHYDRATE)
+  Dosage: 500 MG / 125 MG
+  Forme: SOLUTION BUVABLE
+  Présentation: BOITE DE 20 AMPOULE DE 10 ML
+  Classe thérapeutique: VITAMINES
+  Fabricant: AFRIC PHAR
+  Prix public: 3910.0 DH
+  Prix hospitalier: 2440.0 DH
+  Statut: Non Commercialisé
+
+• BIODROXIL
+  Substance active: CEFADROXIL
+  Dosage: 1000 MG
+  Forme: COMPRIME ENROBE
+  Présentation: BOITE DE 12
+  Classe thérapeutique: INFECTIOLOGIE-PARASITOLOGIE-IMMUNOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 14300.0 DH
+  Prix hospitalier: 8940.0 DH
+  Statut: Non Commercialisé
+
+• BIOMOX
+  Substance active: AMOXICILLINE
+  Dosage: 1 G
+  Forme: COMPRIME DISPERSIBLE
+  Présentation: BOITE DE 12
+  Classe thérapeutique: INFECTIOLOGIE-PARASITOLOGIE-IMMUNOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 5140.0 DH
+  Prix hospitalier: 3210.0 DH
+  Statut: Commercialisé AO
+
+• BROMAX
+  Substance active: AMBROXOL
+  Dosage: 15 MG / 5 ML (0,30%)
+  Forme: SOLUTION BUVABLE
+  Présentation: FLACON DE 200 ML
+  Classe thérapeutique: PNEUMOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 2710.0 DH
+  Prix hospitalier: 1690.0 DH
+  Statut: Commercialisé
+
+• BRONCOTEC
+  Substance active: FORMOTEROL (FUMARATE)
+  Dosage: 12 µG
+  Forme: GELULE POUR INHALATION
+  Présentation: BOITE DE 20
+  Classe thérapeutique: PNEUMOLOGIE
+  Fabricant: ATLAS PHARM
+  Prix public: 8460.0 DH
+  Prix hospitalier: 5290.0 DH
+  Statut: Non Commercialisé
+
+• BUDENA
+  Substance active: BUDESONIDE
+  Dosage: 100 MCG
+  Forme: AEROSOL NASAL
+  Présentation: FLACON DE 200 DOSES
+  Classe thérapeutique: ALLERGOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 13920.0 DH
+  Prix hospitalier: 8700.0 DH
+  Statut: Commercialisé
+
+• CATEX
+  Substance active: CIPROFLOXACINE (CHLORHYDRATE)
+  Dosage: 250 MG
+  Forme: COMPRIME
+  Présentation: BOITE DE 10
+  Classe thérapeutique: INFECTIOLOGIE-PARASITOLOGIE-IMMUNOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 5140.0 DH
+  Prix hospitalier: 3210.0 DH
+  Statut: Commercialisé
+
+• CELLUVISC
+  Substance active: CARMELLOSE (SODIQUE)
+  Dosage: 4 MG / 0,4 ML
+  Forme: COLLYRE RECIPIENT UNIDOSE
+  Présentation: BOITE DE 30
+  Classe thérapeutique: OPHTALMOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 4150.0 DH
+  Prix hospitalier: 2590.0 DH
+  Statut: Non Commercialisé
+
+• CETIRAL
+  Substance active: CETIRIZINE (DICHLORHYDRATE)
+  Dosage: 1 MG / ML
+  Forme: SOLUTION BUVABLE
+  Présentation: FLACON DE 60 ML
+  Classe thérapeutique: ALLERGOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 2560.0 DH
+  Prix hospitalier: 1600.0 DH
+  Statut: Commercialisé
+
+• CHEMOSET
+  Substance active: ONDANSETRON (CHLOHYDRATE)
+  Dosage: 2 MG / ML
+  Forme: SOLUTION INJECTABLE
+  Présentation: BOITE DE 5 AMPOULE DE 2 ML
+  Classe thérapeutique: CANCEROLOGIE-HEMATOLOGIE
+  Fabricant: AFRIC PHAR
+  Prix public: 26900.0 DH
+  Prix hospitalier: 17930.0 DH
+  Statut: Commercialisé AO

@@ -1,0 +1,52 @@
+======================================================================
+HÔPITAL: Hôpital Psychiatrique
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 34
+Type d'établissement: CPU
+Nombre de lits: 300
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Oriental
+Province: Oujda Angad
+Ville: OUJDA MUN
+Adresse: Route de la Zitoune, 60000 Oujda
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Réanimation
+  Description: Soins intensifs
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (5 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• IRM (Code: EQ-MRI)
+  Quantité: 1 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 1 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 4 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 2 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type CPU dispose de 300 lits offre 3 services médicaux et possède 12 équipements médicaux.

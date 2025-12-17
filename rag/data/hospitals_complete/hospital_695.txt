@@ -1,0 +1,46 @@
+======================================================================
+HÔPITAL: Centre Kinesitherapie Bouafi Amine
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 695
+Type d'établissement: CLINIQUE
+Nombre de lits: 30
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Urgences 24/7
+  Description: Service d'urgences médicales disponible 24h/24.
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (4 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 2 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 5 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 4 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 2 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type CLINIQUE dispose de 30 lits offre 3 services médicaux et possède 13 équipements médicaux.

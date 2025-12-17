@@ -1,0 +1,41 @@
+======================================================================
+HÔPITAL: Dispensaire Sidi Ghiate
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 734
+Type d'établissement: HÔPITAL
+Nombre de lits: 20
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (2 services)
+======================================================================
+
+• Pédiatrie
+  Description: Soins pédiatriques
+
+• Rhumatologie
+  Description: Diagnostic et traitement des maladies articulaires.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (3 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 1 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 1 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 3 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 20 lits offre 2 services médicaux et possède 5 équipements médicaux.

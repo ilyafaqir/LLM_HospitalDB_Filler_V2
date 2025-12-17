@@ -1,0 +1,67 @@
+======================================================================
+HÔPITAL: Ksar El Kebir
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 286
+Type d'établissement: HPR
+Nombre de lits: 250
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Route de Rabat, Ksar El Kebir, 12000
+
+--- CONTACT ---
+Téléphone: 539832334
+Email: ksar-el-kebir.hopital@maroc.ma
+Site web: https://ksar-el-kebir.hopital.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (6 services)
+======================================================================
+
+• Consultation Générale
+  Description: Consultation médicale
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Réanimation
+  Description: Soins intensifs
+
+• Oncologie
+  Description: Diagnostic et traitement des cancers et tumeurs.
+
+• Néphrologie
+  Description: Néphrologie médicale
+
+• Médecine Interne
+  Description: Médecine interne
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (8 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 5 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 2 unité(s)
+• Radiographie Numérique (Code: EQ-XRAY)
+  Quantité: 5 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 1 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 2 unité(s)
+• Défibrillateur (Code: EQ-DEF)
+  Quantité: 3 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 5 unité(s)
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HPR dispose de 250 lits offre 6 services médicaux et possède 27 équipements médicaux.

@@ -1,0 +1,50 @@
+======================================================================
+HÔPITAL: 20 Aout (Goulmima)
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 143
+Type d'établissement: HPR
+Nombre de lits: 100
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Drâa-Tafilalet
+Province: Errachidia
+Ville: GOULMIMA MUN
+Adresse: Route de la ville, Goulmima, Province de Figuig, Région de Oriental
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (3 services)
+======================================================================
+
+• Cardiologie
+  Description: Consultation et traitement des maladies cardiovasculaires.
+
+• Radiologie
+  Description: Service d'imagerie médicale offrant des examens radiologiques diagnostiques.
+
+• Imagerie Médicale
+  Description: Service d'imagerie médicale et radiologie diagnostique.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (4 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Scanner CT (Code: EQ-CT)
+  Quantité: 1 unité(s)
+• IRM (Code: EQ-MRI)
+  Quantité: 5 unité(s)
+• Respirateur Artificiel (Code: EQ-VENT)
+  Quantité: 1 unité(s)
+• Moniteur Multiparamétrique (Code: EQ-MON)
+  Quantité: 5 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HPR dispose de 100 lits offre 3 services médicaux et possède 12 équipements médicaux.

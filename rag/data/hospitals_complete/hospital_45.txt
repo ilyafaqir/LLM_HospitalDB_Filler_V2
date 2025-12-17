@@ -1,0 +1,46 @@
+======================================================================
+HÔPITAL: Marche Verte
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 45
+Type d'établissement: HP
+Nombre de lits: 250
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Région: Fès-Meknès
+Province: Boulemane
+Ville: MISSOUR MUN
+Adresse: Route de la Marche Verte, Missour (Mun.)
+
+--- CONTACT ---
+Téléphone: 524832311
+Email: marcheverte.hopital@maroc.ma
+Site web: https://marcheverte.hopital.ma
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (2 services)
+======================================================================
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• ORL
+  Description: Traitement des pathologies de l'oreille, du nez et de la gorge.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (2 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• IRM (Code: EQ-MRI)
+  Quantité: 4 unité(s)
+• Table d'Opération (Code: EQ-TABLE)
+  Quantité: 2 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HP dispose de 250 lits offre 2 services médicaux et possède 6 équipements médicaux.

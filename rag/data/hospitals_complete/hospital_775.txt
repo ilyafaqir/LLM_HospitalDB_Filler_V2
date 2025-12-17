@@ -1,0 +1,40 @@
+======================================================================
+HÔPITAL: dispenssaire ain zliten
+======================================================================
+
+--- INFORMATIONS GÉNÉRALES ---
+ID: 775
+Type d'établissement: HÔPITAL
+Nombre de lits: 20
+Date de création: 2025-12-14 14:22:20
+
+--- LOCALISATION ---
+Adresse: Boulevard Mohammed V, Ain Zleten, Fès
+
+--- CONTACT ---
+
+
+======================================================================
+SERVICES MÉDICAUX DISPONIBLES (2 services)
+======================================================================
+
+• Gynécologie Obstétrique
+  Description: Gynéco obstétrique
+
+• Ophtalmologie
+  Description: Consultation et traitement des maladies des yeux.
+
+======================================================================
+ÉQUIPEMENTS MÉDICAUX (2 types d'équipements)
+======================================================================
+
+--- STANDARD ---
+• Incubateur Néonatal (Code: EQ-INCU)
+  Quantité: 5 unité(s)
+• Dialyse (Code: EQ-DIAL)
+  Quantité: 4 unité(s)
+
+======================================================================
+RÉSUMÉ
+======================================================================
+Cet établissement de type HÔPITAL dispose de 20 lits offre 2 services médicaux et possède 9 équipements médicaux.
