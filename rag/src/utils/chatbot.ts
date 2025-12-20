@@ -2,9 +2,9 @@ import { Message } from '../types/chat'
 
 // Configuration du chatbot
 export const chatbotConfig = {
-  name: 'Assistant Hôpitaux',
-  personality: 'spécialisé dans les informations sur les hôpitaux (services, équipements, contacts, localisations, capacités)',
-  welcomeMessage: "Bonjour ! Je suis votre assistant pour vous renseigner sur les hôpitaux : services médicaux, équipements disponibles, coordonnées, localisation, capacité en lits et points forts. Quelle information souhaitez-vous ?",
+  name: 'Chef Marocain 🍽️',
+  personality: 'spécialisé dans les recettes de cuisine marocaine traditionnelle et authentique',
+  welcomeMessage: "Salam ! 👋 Je suis votre chef marocain virtuel. Je peux vous aider à préparer des tajines, couscous, pastillas, et toutes les délicieuses recettes de la cuisine marocaine. Quelle recette souhaitez-vous découvrir aujourd'hui ?",
   maxMessages: 100
 }
 
@@ -67,20 +67,20 @@ export const generateBotResponse = async (userMessage: string): Promise<string> 
     // Réponses de fallback pour les cas d'erreur
     const lowerMessage = userMessage.toLowerCase()
     
-    if (lowerMessage.includes('bonjour') || lowerMessage.includes('salut')) {
-      return "Bonjour ! Je suis votre assistant spécialisé dans les informations sur les hôpitaux. Comment puis-je vous aider ?"
+    if (lowerMessage.includes('bonjour') || lowerMessage.includes('salut') || lowerMessage.includes('salam')) {
+      return "Salam alaikum ! 👋 Je suis votre chef marocain. Je peux vous aider avec toutes les recettes de la cuisine marocaine : tajines, couscous, pastillas, harira, et bien plus encore. Quelle recette vous intéresse ?"
     }
     
-    if (lowerMessage.includes('merci')) {
-      return "Je vous en prie ! N'hésitez pas à me poser d'autres questions sur les hôpitaux, leurs services ou équipements."
+    if (lowerMessage.includes('merci') || lowerMessage.includes('chokran')) {
+      return "Afwan ! (De rien) 🍽️ N'hésitez pas à revenir pour d'autres recettes marocaines. B'saha ! (Bon appétit !)"
     }
     
     if (lowerMessage.includes('aide') || lowerMessage.includes('help')) {
-      return "Je peux vous aider pour les hôpitaux : localisation, contact, services médicaux, équipements, capacité en lits ou résumé général. Que souhaitez-vous savoir ?"
+      return "Je peux vous aider avec toutes les recettes marocaines : tajines (poulet, agneau, poisson), couscous, pastillas, harira, briouates, makouda, et bien d'autres plats traditionnels. Quelle recette souhaitez-vous préparer ?"
     }
     
-    if (lowerMessage.includes('au revoir') || lowerMessage.includes('bye')) {
-      return "Au revoir ! N'hésitez pas à revenir pour toute information sur les hôpitaux."
+    if (lowerMessage.includes('au revoir') || lowerMessage.includes('bye') || lowerMessage.includes('besslama')) {
+      return "Besslama ! (Au revoir) 👋 Revenez bientôt pour découvrir de nouvelles recettes marocaines. B'saha !"
     }
     
     return "Désolé, je ne peux pas accéder à ma base de connaissances pour le moment. Pouvez-vous reformuler votre question ou réessayer plus tard ?"

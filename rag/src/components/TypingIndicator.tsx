@@ -13,7 +13,7 @@ const TypingIndicator: React.FC = () => {
     >
       <div className="flex items-start space-x-3 max-w-[70%]">
         <motion.div 
-          className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg"
+          className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-red-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg"
           animate={{ 
             rotate: [0, 5, -5, 0],
             scale: [1, 1.05, 1]
@@ -36,7 +36,7 @@ const TypingIndicator: React.FC = () => {
         </motion.div>
         
         <motion.div 
-          className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-600 border border-blue-200 dark:border-gray-600 rounded-xl px-4 py-3 shadow-sm backdrop-blur-sm relative overflow-hidden"
+          className="bg-gradient-to-r from-orange-50 to-amber-50 dark:from-gray-700 dark:to-amber-900/30 border border-orange-200 dark:border-amber-700 rounded-xl px-4 py-3 shadow-sm backdrop-blur-sm relative overflow-hidden"
           animate={{ 
             boxShadow: [
               "0 1px 3px rgba(0,0,0,0.1)",
@@ -49,11 +49,11 @@ const TypingIndicator: React.FC = () => {
           <div className="flex items-center space-x-2">
             <WaveAnimation isActive={true} />
             <motion.span 
-              className="text-sm text-blue-600 dark:text-blue-400 font-medium"
+              className="text-sm text-orange-700 dark:text-orange-400 font-medium"
               animate={{ opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Assistant FSDM écrit...
+              Chef Marocain écrit...
             </motion.span>
           </div>
           

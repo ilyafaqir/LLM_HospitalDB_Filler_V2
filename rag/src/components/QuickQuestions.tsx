@@ -8,12 +8,12 @@ type QuickQuestionsProps = {
 
 function QuickQuestions({ onQuestionClick }: QuickQuestionsProps) {
   const questions = [
-    "Pour l'hôpital Mohamed V, donne-moi un résumé (type, lits, date de création).",
-    "Quel est le type d'établissement de l'hôpital Mohamed V et combien de lits sont disponibles ?",
-    "Depuis quand l'hôpital Mohamed V est-il en service ?",
-    "Quels sont les principaux services médicaux disponibles à l'hôpital Mohamed V ?",
-    "Quels équipements médicaux importants possède l'hôpital Mohamed V ?",
-    "Fais une synthèse des points forts de l'hôpital Mohamed V (services, équipements, capacités, etc.).",
+    "Comment préparer un tajine de poulet aux olives et citron ?",
+    "Quelle est la recette traditionnelle du couscous marocain ?",
+    "Comment faire une pastilla (b'stilla) marocaine ?",
+    "Recette de la harira marocaine traditionnelle",
+    "Comment préparer des briouates au poulet ?",
+    "Recette du tajine d'agneau aux pruneaux et amandes",
   ];
 
   return (
@@ -26,11 +26,11 @@ function QuickQuestions({ onQuestionClick }: QuickQuestionsProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.05 }}
-        className="bg-blue-50 dark:bg-gray-700 rounded-xl p-3 border border-blue-100 dark:border-gray-600"
+        className="bg-orange-50 dark:bg-amber-900/20 rounded-xl p-3 border border-orange-200 dark:border-amber-800"
       >
-        <div className="flex items-center space-x-2 text-blue-600 dark:text-blue-400 font-medium mb-3">
+        <div className="flex items-center space-x-2 text-orange-700 dark:text-orange-400 font-medium mb-3">
           <Info className="w-5 h-5" />
-          <span>Questions hôpital</span>
+          <span>🍽️ Recettes populaires</span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -38,7 +38,7 @@ function QuickQuestions({ onQuestionClick }: QuickQuestionsProps) {
             <button
               key={questionIndex}
               onClick={() => onQuestionClick(question)}
-              className="block w-full text-left p-3 text-xs md:text-sm text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-600 hover:bg-blue-100 dark:hover:bg-gray-500 hover:text-blue-700 dark:hover:text-blue-300 rounded-lg transition-colors border border-transparent hover:border-blue-200 dark:hover:border-gray-400 shadow-sm"
+              className="block w-full text-left p-3 text-xs md:text-sm text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-orange-100 dark:hover:bg-amber-900/30 hover:text-orange-800 dark:hover:text-orange-300 rounded-lg transition-colors border border-transparent hover:border-orange-300 dark:hover:border-amber-700 shadow-sm"
             >
               {question}
             </button>

@@ -87,14 +87,14 @@ const Chatbot: React.FC = () => {
   }
 
   return (
-    <div className="w-full h-full px-2 md:px-6 py-4 bg-gradient-to-br from-blue-100 via-white to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex flex-col items-center relative transition-colors duration-300 overflow-hidden">
+    <div className="w-full h-full px-2 md:px-6 py-4 bg-gradient-to-br from-orange-50 via-amber-50 to-red-50 dark:from-gray-900 dark:via-amber-950 dark:to-orange-950 flex flex-col items-center relative transition-colors duration-300 overflow-hidden">
       {/* Arrière-plan avec particules */}
       <ParticleBackground />
       
       <div className="w-full max-w-6xl bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700 transition-colors duration-300 flex flex-col flex-1 min-h-0">
         {/* En-tête du chat */}
         <motion.div 
-          className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white p-3 md:p-4 rounded-t-2xl relative overflow-hidden"
+          className="bg-gradient-to-r from-orange-600 via-red-600 to-amber-600 text-white p-3 md:p-4 rounded-t-2xl relative overflow-hidden shadow-lg"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -127,8 +127,8 @@ const Chatbot: React.FC = () => {
               >
                 {chatbotConfig.name}
               </motion.h2>
-              <p className="text-blue-100 text-xs md:text-sm truncate">{chatbotConfig.personality}</p>
-              <p className="text-blue-200 text-[10px] md:text-xs mt-0.5 hidden sm:block">Powered by RAG System - Base de Connaissances Hôpitaux</p>
+              <p className="text-orange-100 text-xs md:text-sm truncate">{chatbotConfig.personality}</p>
+              <p className="text-orange-200 text-[10px] md:text-xs mt-0.5 hidden sm:block">🍽️ Powered by RAG System - Recettes Marocaines Authentiques</p>
             </motion.div>
             
             <motion.div 
@@ -163,7 +163,7 @@ const Chatbot: React.FC = () => {
 
         {/* Zone des messages */}
         <motion.div 
-          className="flex-1 overflow-y-auto p-3 md:p-4 bg-gradient-to-b from-gray-50 to-blue-50/30 dark:from-gray-800 dark:to-gray-700/50 relative transition-colors duration-300 min-h-0"
+          className="flex-1 overflow-y-auto p-3 md:p-4 bg-gradient-to-b from-orange-50/50 to-amber-50/30 dark:from-gray-800 dark:to-amber-950/50 relative transition-colors duration-300 min-h-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}

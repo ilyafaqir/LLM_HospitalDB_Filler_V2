@@ -52,8 +52,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
         <motion.div 
           className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg ${
             isUser 
-              ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white' 
-              : 'bg-gradient-to-br from-gray-200 to-gray-300 text-gray-700'
+              ? 'bg-gradient-to-br from-orange-500 to-red-600 text-white' 
+              : 'bg-gradient-to-br from-amber-200 to-orange-300 text-orange-900'
           }`}
           whileHover={{ scale: 1.1, rotate: 5 }}
           transition={{ type: "spring", stiffness: 300 }}
@@ -76,8 +76,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
         <motion.div 
           className={`rounded-xl px-4 py-3 shadow-lg relative backdrop-blur-sm ${isUser ? 'max-w-[85%]' : 'max-w-[90%]'} ${
             isUser 
-              ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white' 
-              : 'bg-gradient-to-br from-white to-gray-50 dark:from-gray-700 dark:to-gray-600 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-600'
+              ? 'bg-gradient-to-br from-orange-500 to-red-600 text-white' 
+              : 'bg-gradient-to-br from-white to-orange-50 dark:from-gray-700 dark:to-amber-900/30 text-gray-900 dark:text-gray-100 border border-orange-200 dark:border-amber-700'
           }`}
           animate={{
             boxShadow: [
@@ -91,7 +91,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
           <p className="text-sm leading-relaxed whitespace-pre-line">{mainContent}</p>
           {/* Affichage des sources */}
           {sources.length > 0 && (
-            <div className="mt-2 text-xs text-blue-700 dark:text-blue-300">
+            <div className="mt-2 text-xs text-orange-700 dark:text-orange-300">
               <div className="font-semibold mb-1">Sources consultées :</div>
               <ul className="list-disc list-inside">
                 {sources.map((src, i) => (
@@ -108,7 +108,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
           {!isUser && (
             <motion.button
               onClick={handleCopy}
-              className="absolute top-2 right-2 p-1 text-gray-400 dark:text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors rounded-lg hover:bg-blue-50 dark:hover:bg-gray-600"
+              className="absolute top-2 right-2 p-1 text-gray-400 dark:text-gray-500 hover:text-orange-600 dark:hover:text-orange-400 transition-colors rounded-lg hover:bg-orange-50 dark:hover:bg-amber-900/30"
               title="Copier la réponse"
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.95 }}
